@@ -14,12 +14,17 @@
   "dependencies": {
     "nuxt": "^4.6.1",
     "vue": "^3.5.43",
+    "vue-fullpage": "^2.0.5",
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@nuxt/eslint": "^1.17.0",
     "eslint": "^10.12.0",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.9.10"
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.13.0",
+    "prettier": "3.9.10",
+    "typescript-eslint": "^8.71.2"
   }
 }
