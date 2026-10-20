@@ -32,19 +32,58 @@
         </div>
       </div>
     </section>
+
     <section id="experience" class="page">
-      <p>工作经历</p>
-      <div>
-        <p>软件测试</p>
-        <p>时间：2023年9月 - 2024年6月</p>
-        <p>工作内容.....</p>
-      </div>
-      <div>
-        <p>工艺工程师</p>
-        <p>时间：2023年9月 - 2024年6月</p>
-        <p>工作内容：.....</p>
+      <div class="experience-section">
+        <h2 class="experience-title">工作经历</h2>
+        <p class="experience-subtitle">我的职业经历与成长</p>
+
+        <div class="experience-list">
+          <!-- 第一份工作 -->
+          <div class="experience-card">
+            <div class="experience-header">
+              <h3>软件测试</h3>
+              <p class="experience-time">2026年9月 — 2027年2月</p>
+            </div>
+            <h5>东莞缀梦智能科技有限公司</h5>
+
+            <div class="experience-divider" />
+
+            <h4>工作内容</h4>
+            <p class="experience-description">
+              功能测试： 负责「爱刻」「Umove」两款
+              APP功能测试，验证蓝牙设备连接、玩具绑定及通话等功能，排查功能异常。 <br />
+              缺陷管理：编写测试报告及 Bug 报告，记录缺陷并跟进问题反馈与验证。 <br />
+              竞品分析：分析同类产品功能及交互体验，提出产品功能优化与需求改进建议。<br />
+              产品协作：参与产品网页功能评审与完善，了解产品上线流程及 Android、iOS 平台差异。
+            </p>
+          </div>
+
+          <!-- 第二份工作 -->
+          <div class="experience-card">
+            <div class="experience-header">
+              <h3>工艺工程师</h3>
+              <p class="experience-time">2026年2月 — 2026年8月</p>
+            </div>
+
+            <h5>广东保伦电子股份有限公司</h5>
+
+            <div class="experience-divider" />
+
+            <h4>工作内容</h4>
+            <p class="experience-description">
+              流程规范： 负责装配、半成品及调试全流程 SOP 编写，运用边界值、场景法等测试思维
+              拆解产品功能，规范异常操作处理流程。<br />
+              硬件调试：熟练使用示波器、万用表进行信号测试与故障定位，独立搭建测试环境并协
+              助复现硬件缺陷，具备软硬件联调基础。<br />
+              产品认知：深入产线熟悉多款音视频产品全生命周期，善于从用户视角梳理功能逻辑，
+              提升测试覆盖全面性。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
     <section id="skills" class="page">
       <p>技术栈展示</p>
       <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
@@ -166,6 +205,109 @@ body {
 </style>
 
 <style scoped>
+.experience-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-title {
+  margin: 0 0 8px;
+  color: #43566e;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.experience-subtitle {
+  margin: 0 0 32px;
+  color: #8291a5;
+  font-size: 14px;
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  text-align: left;
+}
+
+.experience-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 28px 26px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(153, 178, 205, 0.4);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 24px rgba(66, 94, 130, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(66, 94, 130, 0.1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.experience-header h3 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 650;
+  color: #43566e;
+}
+.experience-time {
+  margin: 14px 0 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #8291a5;
+}
+.experience-divider {
+  height: 1px;
+  background: #e1eaf3;
+  margin-bottom: 20px;
+}
+.experience-card h4 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #526b8a;
+}
+.experience-description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #637287;
+}
+@media (max-width: 650px) {
+  .experience-title {
+    font-size: 25px;
+  }
+
+  .experience-subtitle {
+    margin-bottom: 22px;
+  }
+
+  .experience-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .experience-card {
+    padding: 22px 20px;
+  }
+
+  .experience-header h3 {
+    font-size: 19px;
+  }
+}
 .back-to-home {
   position: fixed;
   right: 28px;
