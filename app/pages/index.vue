@@ -91,21 +91,133 @@
       <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
       <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
     </section>
+
     <section id="projects" class="page">
-      <p>项目展示</p>
-      <p>xxxxxxxxxxx</p>
-    </section>
-    <section id="contact" class="page">
-      <div>
-        <p>有事请联系我</p>
-        <p>邮箱：242536xxxx@qq.com</p>
-        <p>微信：Clarence_xxxx</p>
-        <input type="text" placeholder="名字" />
-        <input type="email" placeholder="邮箱" />
-        <div><textarea placeholder="留言" /></div>
-        <div><button type="button">发送</button></div>
+      <div class="projects-section">
+        <p class="projects-label">MY PROJECTS</p>
+        <h2 class="projects-title">项目实践</h2>
+
+        <div class="projects-list">
+          <article class="project-card">
+            <img
+              src="/images/爱刻.png"
+              alt="爱刻 APP 功能展示"
+              class="project-image"
+              @click="openPreview('/images/爱刻.png', '爱刻 APP 功能展示')"
+            />
+
+            <div class="project-content">
+              <span class="project-type">移动端 </span>
+              <h3>爱刻</h3>
+              <p class="project-description">
+                智能设备配套应用，围绕蓝牙连接、设备控制及应用页面， 验证功能是否正常运行。
+              </p>
+
+              <div class="project-divider" />
+
+              <h4>核心测试工作</h4>
+              <ul class="project-work">
+                <li>蓝牙连接与设备配对验证</li>
+                <li>设备控制及玩具联动通话测试</li>
+                <li>社交页面与个人中心功能测试</li>
+                <li>编写 Bug 报告及测试报告</li>
+              </ul>
+
+              <div class="project-tags">
+                <span>功能测试</span>
+                <span>蓝牙连接</span>
+                <span>移动端测试</span>
+                <span>缺陷管理</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img
+              src="/images/Umove网页.png"
+              alt="Umove 网页测试展示"
+              class="project-image"
+              @click="openPreview('/images/Umove网页.png', 'Umove 网页测试展示')"
+            />
+
+            <div class="project-content">
+              <span class="project-type">Web 端</span>
+              <h3>Umove 网页</h3>
+              <p class="project-description">
+                对 Umove 网页进行功能测试，验证页面跳转是否正常， 检查各项功能能否正常使用。
+              </p>
+
+              <div class="project-divider" />
+
+              <h4>核心测试工作</h4>
+              <ul class="project-work">
+                <li>测试页面跳转与导航功能</li>
+                <li>验证页面功能及交互是否正常</li>
+                <li>检查异常情况并记录问题</li>
+                <li>整理 Bug 报告并反馈测试结果</li>
+              </ul>
+
+              <div class="project-tags">
+                <span>Web 测试</span>
+                <span>页面跳转</span>
+                <span>功能测试</span>
+                <span>缺陷管理</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
+
+    <!-- 图片放大预览 -->
+    <div
+      v-if="previewVisible"
+      class="image-preview"
+      @click.self="closePreview"
+      @keydown.esc="closePreview"
+    >
+      <button class="preview-close" aria-label="关闭图片预览" @click="closePreview">×</button>
+
+      <img :src="previewImage" :alt="previewAlt" class="preview-image" @click.stop />
+    </div>
+
+    <section id="contact" class="page">
+      <div class="contact-section">
+        <p class="contact-label">CONTACT</p>
+        <h2>让我们聊聊吧。</h2>
+        <p class="contact-subtitle">如果你对我的经历或项目感兴趣，欢迎与我联系。</p>
+
+        <div class="contact-info">
+          <a href="mailto:你的邮箱地址" class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span>2425368446@qq.com</span>
+          </a>
+
+          <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <span>13356461672</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <span>Clarence_0813</span>
+          </div>
+        </div>
+
+        <form class="contact-form" @submit.prevent="sendMessage">
+          <div class="contact-row">
+            <input v-model.trim="contactForm.name" type="text" placeholder="姓名" required />
+            <input v-model.trim="contactForm.email" type="email" placeholder="邮箱" required />
+          </div>
+
+          <input v-model.trim="contactForm.subject" type="text" placeholder="主题" required />
+
+          <textarea v-model.trim="contactForm.message" placeholder="留言" rows="4" required />
+
+          <button type="submit">发送留言</button>
+        </form>
+      </div>
+    </section>
+
     <button
       class="back-to-home"
       aria-label="返回首页"
@@ -144,12 +256,23 @@ const aboutList = [
   },
 ]
 const typeText = ref('')
+const previewVisible = ref(false)
+const previewImage = ref('')
+const previewAlt = ref('')
 const sentenceList = [
   '你好，我是晚吟。',
   '我是一名前端开发工程师。',
   '我热爱编程，喜欢探索新技术。',
   '欢迎访问我的个人主页！',
 ]
+const contactForm = ref({
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+})
+
+const contactEmail = '你的真实邮箱地址'
 let timer = null
 let sentenceIndex = 0
 let charIndex = 0
@@ -184,6 +307,7 @@ onUnmounted(() => {
   if (timer) {
     clearInterval(timer)
   }
+  document.body.style.overflow = ''
 })
 
 function scrollToSection(sectionId) {
@@ -191,6 +315,29 @@ function scrollToSection(sectionId) {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' })
   }
+}
+function sendMessage() {
+  const { name, email, subject, message } = contactForm.value
+
+  const body = `姓名：${name}\n邮箱：${email}\n\n${message}`
+
+  const url =
+    `mailto:${contactEmail}` +
+    `?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`
+
+  window.location.href = url
+}
+function openPreview(src, alt) {
+  previewImage.value = src
+  previewAlt.value = alt
+  previewVisible.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+function closePreview() {
+  previewVisible.value = false
+  document.body.style.overflow = ''
 }
 </script>
 
@@ -205,6 +352,360 @@ body {
 </style>
 
 <style scoped>
+/* 图片点击放大预览 */
+.project-image {
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
+
+.image-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+  box-sizing: border-box;
+
+  background: rgba(12, 18, 30, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.preview-image {
+  display: block;
+  max-width: 90vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+  cursor: zoom-out;
+}
+
+.preview-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.preview-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 600px) {
+  .image-preview {
+    padding: 16px;
+  }
+
+  .preview-image {
+    max-width: 94vw;
+    max-height: 82vh;
+  }
+
+  .preview-close {
+    top: 12px;
+    right: 12px;
+  }
+}
+/* 项目展示整体 */
+.projects-section {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.projects-label {
+  margin: 0 0 6px;
+  color: #8291a5;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.projects-title {
+  margin: 0 0 18px;
+  color: #43566e;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 两张卡片等宽、等高、左右对称 */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+}
+
+/* 卡片外观 */
+.project-card {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(153, 178, 205, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(66, 94, 130, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(66, 94, 130, 0.12);
+}
+
+/* 图片尺寸统一，并与卡片边框保持距离 */
+.project-image {
+  display: block;
+  width: calc(100% - 32px);
+  height: 160px;
+  margin: 16px auto 0;
+  box-sizing: border-box;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.project-content {
+  padding: 20px 20px 22px;
+}
+
+.project-type {
+  color: #8291a5;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.project-content h3 {
+  margin: 7px 0 9px;
+  color: #43566e;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.project-description {
+  margin: 0;
+  color: #637287;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: #e1eaf3;
+}
+
+.project-content h4 {
+  margin: 0 0 10px;
+  color: #526b8a;
+  font-size: 13px;
+}
+
+.project-work {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-work li {
+  position: relative;
+  padding-left: 13px;
+  color: #637287;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.project-work li::before {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: #829bb8;
+  border-radius: 50%;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.project-tags span {
+  padding: 5px 9px;
+  color: #526b8a;
+  font-size: 10px;
+  background: #edf3fa;
+  border: 1px solid rgba(153, 178, 205, 0.3);
+  border-radius: 20px;
+}
+
+/* 小屏幕下改为上下排列 */
+@media (max-width: 600px) {
+  .projects-section {
+    max-width: 360px;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .projects-title {
+    font-size: 25px;
+    margin-bottom: 14px;
+  }
+
+  .project-image {
+    height: auto;
+    max-height: 200px;
+  }
+
+  .project-content {
+    padding: 15px 16px 17px;
+  }
+}
+
+.contact-section {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.contact-label {
+  margin-bottom: 18px;
+  color: #8291a5;
+  font-size: 13px;
+  letter-spacing: 5px;
+}
+.contact-section h2 {
+  margin: 0 0 12px;
+  color: #43566e;
+  font-size: 30px;
+  font-weight: 700;
+}
+.contact-subtitle {
+  margin-bottom: 28px;
+  color: #8291a5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #43566e;
+  font-size: 15px;
+  text-decoration: none;
+}
+.contact-icon {
+  color: #526b8a;
+  font-size: 21px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  color: #43566e;
+  font: inherit;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(153, 178, 205, 0.45);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #526b8a;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.contact-form button {
+  padding: 13px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  background: #526b8a;
+  border: 1px solid #526b8a;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contact-form button:hover {
+  background: #43566e;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .contact-section h2 {
+    font-size: 25px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    align-items: flex-start;
+  }
+}
 .experience-section {
   width: 100%;
   max-width: 1000px;
