@@ -85,11 +85,36 @@
     </section>
 
     <section id="skills" class="page">
-      <p>技术栈展示</p>
-      <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
-      <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
-      <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
-      <img alt="Vue logo" src="/images/头像.jpg" width="125" height="125" class="avatar" />
+      <div class="skills-section">
+        <p class="skills-label">MY SKILLS</p>
+        <h2 class="skills-title">技术栈</h2>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <img src="/images/html.webp" alt="HTML" class="skill-image" />
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/css.png" alt="CSS" class="skill-image" />
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/js.png" alt="JavaScript" class="skill-image" />
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/spring-boot.png" alt="Spring Boot" class="skill-image" />
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/node.png" alt="Node.js" class="skill-image" />
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/Java.jpg" alt="Java" class="skill-image" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="projects" class="page">
@@ -169,7 +194,6 @@
       </div>
     </section>
 
-    <!-- 图片放大预览 -->
     <div
       v-if="previewVisible"
       class="image-preview"
@@ -232,8 +256,18 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-const activeIndex = ref(-1)
+const activeIndex = ref(0)
 const aboutList = [
+  {
+    question: '关于我的背景以及我是一个怎样的人？',
+    answer:
+      '我目前就读于广州软件学院电子与计算机工程专业，是一名2027届的大四学生，同时也是一名学生党员。关于我是一个怎样的人这件事，我认为我是一个始终走在向“好”字靠拢的人，想成为一个好人，做很多好事，学习更多的技能去完善自身，做一切我认为正确的事。',
+  },
+  {
+    question: '为什么想成为一名测试工程师？',
+    answer:
+      '因为喜欢吧，喜欢去发现问题，分析问题，解决问题，这能给我带来极大地成就感。在不断完善产品的过程中，也会觉得与有荣焉，恰好我也有足够的耐心和细心去做好这件事。',
+  },
   {
     question: '我如何发现问题？',
     answer:
@@ -261,7 +295,7 @@ const previewImage = ref('')
 const previewAlt = ref('')
 const sentenceList = [
   '你好，我是晚吟。',
-  '我是一名前端开发工程师。',
+  '我是一名测试工程师。',
   '我热爱编程，喜欢探索新技术。',
   '欢迎访问我的个人主页！',
 ]
@@ -1044,6 +1078,91 @@ p {
 
   .back-text {
     font-size: 10px;
+  }
+}
+
+/* 技术栈：圆形图标布局 */
+.skills-section {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.skills-label {
+  margin: 0 0 8px;
+  color: #8291a5;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.skills-title {
+  margin: 0 0 32px;
+  color: #43566e;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 30px 50px;
+  width: 100%;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  height: 150px;
+  padding: 18px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(153, 178, 205, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(66, 94, 130, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 12px 26px rgba(66, 94, 130, 0.15);
+}
+
+.skill-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .skills-section {
+    max-width: 320px;
+  }
+
+  .skills-title {
+    margin-bottom: 24px;
+    font-size: 25px;
+  }
+
+  .skills-grid {
+    gap: 22px 32px;
+  }
+
+  .skill-item {
+    width: 88px;
+    height: 88px;
+    padding: 14px;
   }
 }
 </style>
