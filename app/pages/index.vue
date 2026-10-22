@@ -1,7 +1,19 @@
 <template>
   <div class="container">
     <section id="home" class="page">
-      <img alt="Vue logo" src="/images/头像.jpg" width="100" height="100" class="avatar" />
+      <div class="avatar-orbit">
+        <span class="orbit-ring ring-1" />
+        <span class="orbit-ring ring-2" />
+        <span class="orbit-ring ring-3" />
+        <span class="orbit-ring ring-4" />
+
+        <span class="ripple ripple-1" />
+        <span class="ripple ripple-2" />
+        <span class="ripple ripple-3" />
+
+        <img src="/images/头像.jpg" alt="个人头像" class="avatar" />
+      </div>
+
       <h1>吴莞盈</h1>
       <p class="type-text">{{ typeText }}<span class="cursor">|</span></p>
       <div class="btn-group">
@@ -38,9 +50,9 @@
         <h2 class="experience-title">工作经历</h2>
         <p class="experience-subtitle">我的职业经历与成长</p>
 
-        <div class="experience-list">
+        <div class="experience-list" :class="{ 'experience-visible': experienceVisible }">
           <!-- 第一份工作 -->
-          <div class="experience-card">
+          <div class="experience-card" data-direction="left">
             <div class="experience-header">
               <h3>软件测试</h3>
               <p class="experience-time">2026年9月 — 2027年2月</p>
@@ -60,7 +72,7 @@
           </div>
 
           <!-- 第二份工作 -->
-          <div class="experience-card">
+          <div class="experience-card" data-direction="right">
             <div class="experience-header">
               <h3>工艺工程师</h3>
               <p class="experience-time">2026年2月 — 2026年8月</p>
@@ -89,7 +101,7 @@
         <p class="skills-label">MY SKILLS</p>
         <h2 class="skills-title">技术栈</h2>
 
-        <div class="skills-grid">
+        <div class="skills-grid" :class="{ 'skills-visible': skillsVisible }">
           <div class="skill-item">
             <img src="/images/HTML5.svg" alt="HTML" class="skill-image" />
             <div class="skill-overlay"><span>HTML</span></div>
@@ -366,6 +378,10 @@ const contactForm = ref({
 })
 
 const contactEmail = '你的真实邮箱地址'
+const skillsVisible = ref(false)
+const experienceVisible = ref(false)
+let experienceObserver = null
+let skillsObserver = null
 let timer = null
 let sentenceIndex = 0
 let charIndex = 0
@@ -394,12 +410,64 @@ function startType() {
 
 onMounted(() => {
   startType()
+
+  const container = document.querySelector('.container')
+  const skillsSection = document.getElementById('skills')
+
+  if (container && skillsSection) {
+    skillsObserver = new IntersectionObserver(
+      ([entry]) => {
+        skillsVisible.value = entry.isIntersecting
+      },
+      {
+        root: container,
+        threshold: 0.25,
+      }
+    )
+
+    skillsObserver.observe(skillsSection)
+  }
+
+  // 工作经历进入视野时触发动画
+  const experienceList = document.querySelector('.experience-list')
+
+  if (container && experienceList) {
+    experienceObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          experienceVisible.value = true
+
+          if (experienceObserver) {
+            experienceObserver.disconnect()
+            experienceObserver = null
+          }
+        }
+      },
+      {
+        root: container,
+        threshold: 0.25,
+      }
+    )
+
+    experienceObserver.observe(experienceList)
+  }
 })
 
 onUnmounted(() => {
   if (timer) {
     clearInterval(timer)
   }
+
+  if (skillsObserver) {
+    skillsObserver.disconnect()
+    skillsObserver = null
+  }
+
+  if (experienceObserver) {
+    experienceObserver.disconnect()
+    experienceObserver = null
+  }
+
   document.body.style.overflow = ''
 })
 
@@ -1140,7 +1208,6 @@ p {
   }
 }
 
-/* 技术栈：4行4列圆形图标布局 */
 .skills-section {
   width: 100%;
   max-width: 640px;
@@ -1162,7 +1229,6 @@ p {
   font-weight: 700;
 }
 
-/* 固定为4列，16个图标自然排列成4行 */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1172,7 +1238,6 @@ p {
   width: 100%;
 }
 
-/* 外面的框：保持圆形 */
 .skill-item {
   display: flex;
   align-items: center;
@@ -1263,6 +1328,321 @@ p {
 
   .skill-item {
     padding: 10px;
+  }
+}
+
+.skills-grid .skill-item {
+  opacity: 0;
+  transform: translateX(-80px);
+
+  transition:
+    opacity 2s ease,
+    transform 2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.skills-grid .skill-item:nth-child(4n + 3),
+.skills-grid .skill-item:nth-child(4n + 4) {
+  transform: translateX(80px);
+}
+
+.skills-grid.skills-visible .skill-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skills-grid .skill-item:nth-child(4n + 1) {
+  transition-delay: 0.05s;
+}
+
+.skills-grid .skill-item:nth-child(4n + 2) {
+  transition-delay: 0.12s;
+}
+
+.skills-grid .skill-item:nth-child(4n + 3) {
+  transition-delay: 0.19s;
+}
+
+.skills-grid .skill-item:nth-child(4n + 4) {
+  transition-delay: 0.26s;
+}
+
+.skills-grid.skills-visible .skill-item:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-grid .skill-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+#home {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#home::before,
+#home::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(65px);
+  pointer-events: none;
+  animation: home-glow 10s ease-in-out infinite alternate;
+}
+
+#home::before {
+  top: 8%;
+  left: 8%;
+  background: rgba(120, 181, 255, 0.2);
+}
+
+#home::after {
+  right: 8%;
+  bottom: 8%;
+  background: rgba(157, 205, 255, 0.25);
+  animation-delay: -5s;
+}
+
+@keyframes home-glow {
+  0% {
+    transform: translate(-40px, -25px) scale(0.85);
+  }
+
+  50% {
+    transform: translate(30px, 20px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(70px, -35px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home::before,
+  #home::after {
+    animation: none;
+  }
+}
+#home h1,
+#home .type-text,
+#home .btn-group {
+  position: relative;
+  z-index: 2;
+}
+
+.avatar-orbit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  margin-bottom: 2rem;
+  z-index: 0;
+}
+
+.avatar-orbit .avatar {
+  position: relative;
+  z-index: 0;
+  width: 200px;
+  height: auto;
+  border-radius: 80%;
+  margin: 0;
+}
+
+.orbit-ring,
+.ripple {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.orbit-ring {
+  z-index: -1;
+  border: 1px solid rgba(104, 159, 218, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 250px;
+  height: 250px;
+}
+
+.ring-2 {
+  width: 410px;
+  height: 410px;
+}
+
+.ring-3 {
+  width: 500px;
+  height: 500px;
+}
+
+.ring-4 {
+  width: 650px;
+  height: 650px;
+}
+
+.ripple {
+  z-index: -1;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(186, 211, 240, 0.7);
+  opacity: 0;
+  animation: ripple-out 10s ease-out infinite;
+}
+
+.ripple-2 {
+  animation-delay: 1.66s;
+}
+
+.ripple-3 {
+  animation-delay: 3.33s;
+}
+
+@keyframes ripple-out {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.65;
+  }
+
+  70% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+.project-card {
+  position: relative;
+  border: 1px solid rgba(120, 160, 210, 0.22);
+  border-radius: 16px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(120, 175, 240, 0.65);
+  box-shadow: 0 8px 22px rgba(40, 90, 160, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* 工作经历卡片：初始状态 */
+.experience-card {
+  opacity: 0;
+  transform: translateX(0) scale(0.88);
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+/* 左侧卡片：从左边弹入 */
+.experience-card[data-direction='left'] {
+  transform: translateX(-100px) scale(0.88);
+}
+
+/* 右侧卡片：从右边弹入 */
+.experience-card[data-direction='right'] {
+  transform: translateX(100px) scale(0.88);
+}
+
+/* 进入视野后触发动画 */
+.experience-list.experience-visible .experience-card {
+  animation: jelly-enter 1.15s both;
+}
+
+/* 左右错开一点时间 */
+.experience-list.experience-visible .experience-card[data-direction='right'] {
+  animation-delay: 0.16s;
+}
+
+/* 果冻弹性进入 */
+@keyframes jelly-enter {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--enter-x, 0)) scale(0.88, 0.88);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translateX(0) scale(1.04, 0.96);
+  }
+
+  62% {
+    transform: translateX(0) scale(0.97, 1.03);
+  }
+
+  78% {
+    transform: translateX(0) scale(1.015, 0.99);
+  }
+
+  90% {
+    transform: translateX(0) scale(0.995, 1.005);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1, 1);
+  }
+}
+
+/* 左右方向分别设置初始位移 */
+.experience-card[data-direction='left'] {
+  --enter-x: -100px;
+}
+
+.experience-card[data-direction='right'] {
+  --enter-x: 100px;
+}
+
+/* 动画结束后仍保留原本的悬停效果 */
+.experience-card:hover {
+  transform: translateY(-4px);
+}
+
+/* 尊重系统的减少动态效果设置 */
+@media (prefers-reduced-motion: reduce) {
+  .experience-card,
+  .experience-list.experience-visible .experience-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    will-change: auto;
   }
 }
 </style>
