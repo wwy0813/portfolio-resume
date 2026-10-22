@@ -2,7 +2,7 @@
   <div class="container">
     <section id="home" class="page">
       <img alt="Vue logo" src="/images/头像.jpg" width="100" height="100" class="avatar" />
-      <h1>晚吟</h1>
+      <h1>吴莞盈</h1>
       <p class="type-text">{{ typeText }}<span class="cursor">|</span></p>
       <div class="btn-group">
         <button @click="scrollToSection('about')">关于</button>
@@ -91,27 +91,86 @@
 
         <div class="skills-grid">
           <div class="skill-item">
-            <img src="/images/html.webp" alt="HTML" class="skill-image" />
+            <img src="/images/HTML5.svg" alt="HTML" class="skill-image" />
+            <div class="skill-overlay"><span>HTML</span></div>
           </div>
 
           <div class="skill-item">
-            <img src="/images/css.png" alt="CSS" class="skill-image" />
+            <img src="/images/css-3.svg" alt="CSS" class="skill-image" />
+            <div class="skill-overlay"><span>CSS</span></div>
           </div>
 
           <div class="skill-item">
-            <img src="/images/js.png" alt="JavaScript" class="skill-image" />
+            <img src="/images/javascript.svg" alt="JavaScript" class="skill-image" />
+            <div class="skill-overlay"><span>JavaScript</span></div>
           </div>
 
           <div class="skill-item">
-            <img src="/images/spring-boot.png" alt="Spring Boot" class="skill-image" />
+            <img src="/images/typescript-icon.svg" alt="TypeScript" class="skill-image" />
+            <div class="skill-overlay"><span>TypeScript</span></div>
           </div>
 
           <div class="skill-item">
-            <img src="/images/node.png" alt="Node.js" class="skill-image" />
+            <img src="/images/nodejs.svg" alt="Node.js" class="skill-image" />
+            <div class="skill-overlay"><span>Node.js</span></div>
           </div>
 
           <div class="skill-item">
-            <img src="/images/Java.jpg" alt="Java" class="skill-image" />
+            <img src="/images/vue.svg" alt="Vue.js" class="skill-image" />
+            <div class="skill-overlay"><span>Vue.js</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/nuxt-icon.svg" alt="Nuxt.js" class="skill-image" />
+            <div class="skill-overlay"><span>Nuxt.js</span></div>
+          </div>
+          <div class="skill-item">
+            <img src="/images/spring.svg" alt="Spring Boot" class="skill-image" />
+            <div class="skill-overlay"><span>Spring Boot</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/python.svg" alt="Python" class="skill-image" />
+            <div class="skill-overlay"><span>Python</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/mysql.svg" alt="MySQL" class="skill-image" />
+            <div class="skill-overlay"><span>MySQL</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/git-icon.svg" alt="Git" class="skill-image" />
+            <div class="skill-overlay"><span>Git</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/github-icon.svg" alt="GitHub" class="skill-image" />
+            <div class="skill-overlay"><span>GitHub</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/java.svg" alt="Java" class="skill-image" />
+            <div class="skill-overlay"><span>Java</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img
+              src="/images/Visual Studio Code (VS Code).svg"
+              alt="Visual Studio Code"
+              class="skill-image"
+            />
+            <div class="skill-overlay"><span>Visual Studio Code</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/IntelliJ IDEA.svg" alt="IntelliJ IDEA" class="skill-image" />
+            <div class="skill-overlay"><span>IntelliJ IDEA</span></div>
+          </div>
+
+          <div class="skill-item">
+            <img src="/images/Android Studio.svg" alt="Android Studio" class="skill-image" />
+            <div class="skill-overlay"><span>Android Studio</span></div>
           </div>
         </div>
       </div>
@@ -294,7 +353,7 @@ const previewVisible = ref(false)
 const previewImage = ref('')
 const previewAlt = ref('')
 const sentenceList = [
-  '你好，我是晚吟。',
+  '你好，我是吴莞盈。',
   '我是一名测试工程师。',
   '我热爱编程，喜欢探索新技术。',
   '欢迎访问我的个人主页！',
@@ -1081,10 +1140,10 @@ p {
   }
 }
 
-/* 技术栈：圆形图标布局 */
+/* 技术栈：4行4列圆形图标布局 */
 .skills-section {
   width: 100%;
-  max-width: 480px;
+  max-width: 640px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -1097,30 +1156,37 @@ p {
 }
 
 .skills-title {
-  margin: 0 0 32px;
+  margin: 0 0 24px;
   color: #43566e;
   font-size: 28px;
   font-weight: 700;
 }
 
+/* 固定为4列，16个图标自然排列成4行 */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-items: center;
   align-items: center;
-  gap: 30px 50px;
+  gap: 20px;
   width: 100%;
 }
 
+/* 外面的框：保持圆形 */
 .skill-item {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 150px;
-  height: 150px;
-  padding: 18px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  padding: 16px;
   box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
 
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(153, 178, 205, 0.4);
@@ -1133,7 +1199,7 @@ p {
 }
 
 .skill-item:hover {
-  transform: translateY(-5px) scale(1.04);
+  transform: translateY(-4px) scale(1.03);
   box-shadow: 0 12px 26px rgba(66, 94, 130, 0.15);
 }
 
@@ -1142,27 +1208,61 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
+  transition: transform 0.35s ease;
+}
+
+.skill-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: 50%;
+  background: rgba(132, 177, 233, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-overlay span {
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.skill-item:hover .skill-overlay {
+  opacity: 1;
+}
+
+.skill-item:hover .skill-image {
+  transform: scale(1.08);
 }
 
 @media (max-width: 600px) {
   .skills-section {
-    max-width: 320px;
+    max-width: 400px;
   }
 
   .skills-title {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-size: 25px;
   }
 
   .skills-grid {
-    gap: 22px 32px;
+    gap: 12px;
   }
 
   .skill-item {
-    width: 88px;
-    height: 88px;
-    padding: 14px;
+    padding: 10px;
   }
 }
 </style>

@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@dev.icons/vue": "^1.3.0",
     "nuxt": "^4.6.1",
     "vue": "^3.5.43",
     "vue-fullpage": "^2.0.5",
