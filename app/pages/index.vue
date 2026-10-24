@@ -283,7 +283,7 @@
         <p class="contact-subtitle">如果你对我的经历或项目感兴趣，欢迎与我联系。</p>
 
         <div class="contact-info">
-          <a href="mailto:你的邮箱地址" class="contact-item">
+          <a href="mailto:2425368446@qq.com" class="contact-item">
             <span class="contact-icon">✉</span>
             <span>2425368446@qq.com</span>
           </a>
@@ -377,7 +377,7 @@ const contactForm = ref({
   message: '',
 })
 
-const contactEmail = '你的真实邮箱地址'
+const contactEmail = '2425368446@qq.com'
 const skillsVisible = ref(false)
 const experienceVisible = ref(false)
 let experienceObserver = null
