@@ -1,68 +1,197 @@
 <template>
-  <div class="container">
-    <section id="home" class="page">
-      <div class="avatar-orbit">
-        <span class="orbit-ring ring-1" />
-        <span class="orbit-ring ring-2" />
-        <span class="orbit-ring ring-3" />
-        <span class="orbit-ring ring-4" />
+  <div
+    class="site-scroll h-dvh w-full snap-y snap-mandatory overflow-x-hidden overflow-y-auto scroll-smooth overscroll-y-contain bg-[linear-gradient(135deg,#e0f2ff_0%,#ffffff_50%,#dbeafe_100%)] text-center"
+  >
+    <section
+      id="home"
+      class="relative isolate flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center overflow-hidden px-4 py-8 text-center sm:px-6"
+    >
+      <!-- 淡蓝色氛围光，不再依赖原来的 #home::before / ::after -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute left-[5%] top-[8%] -z-10 size-48 rounded-full bg-sky-300/20 blur-3xl sm:size-72"
+      />
 
-        <span class="ripple ripple-1" />
-        <span class="ripple ripple-2" />
-        <span class="ripple ripple-3" />
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-[8%] right-[5%] -z-10 size-48 rounded-full bg-blue-200/30 blur-3xl sm:size-72"
+      />
 
-        <img src="/images/头像.jpg" alt="个人头像" class="avatar" />
+      <!-- 同心圆区域：整体根据屏幕宽度缩放 -->
+      <div
+        class="relative isolate flex size-[min(82vw,620px)] shrink-0 items-center justify-center"
+      >
+        <!-- 四层淡蓝色同心圆 -->
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[38.46%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/50"
+        />
+
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[63.08%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/45"
+        />
+
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[76.92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/40"
+        />
+
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-full -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-sky-300/40"
+        />
+
+        <!-- 三层扩散波纹 -->
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 motion-safe:animate-[ripple-out_10s_ease-out_infinite] motion-reduce:hidden"
+        />
+
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:1.66s] motion-reduce:hidden"
+        />
+
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:3.33s] motion-reduce:hidden"
+        />
+
+        <!-- 头像 -->
+        <img
+          src="/images/头像.jpg"
+          alt="吴莞盈的个人头像"
+          class="relative z-10 aspect-square w-[30.77%] rounded-full object-cover shadow-lg ring-4 ring-white/70"
+        />
       </div>
 
-      <h1>吴莞盈</h1>
-      <p class="type-text">{{ typeText }}<span class="cursor">|</span></p>
-      <div class="btn-group">
-        <button @click="scrollToSection('about')">关于</button>
-        <button @click="scrollToSection('experience')">经历</button>
-        <button @click="scrollToSection('skills')">技术栈</button>
-        <button @click="scrollToSection('projects')">项目</button>
-        <button @click="scrollToSection('contact')">联系</button>
-      </div>
+      <!-- 姓名 -->
+      <h1
+        class="-mt-[7%] relative z-10 text-2xl font-bold tracking-wide text-slate-800 sm:text-3xl md:text-4xl"
+      >
+        吴莞盈
+      </h1>
+
+      <!-- 打字机文字：保留原有 Vue 逻辑 -->
+      <p
+        class="relative z-10 mt-5 min-h-7 max-w-full px-2 text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg"
+      >
+        {{ typeText }}<span class="ml-1 inline-block animate-pulse">|</span>
+      </p>
+
+      <!-- 导航按钮 -->
+      <nav
+        aria-label="首页导航"
+        class="relative z-10 mt-5 flex w-full max-w-xl flex-wrap items-center justify-center gap-2 sm:mt-6 sm:gap-3"
+      >
+        <button
+          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          @click="scrollToSection('about')"
+        >
+          关于
+        </button>
+
+        <button
+          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          @click="scrollToSection('experience')"
+        >
+          经历
+        </button>
+
+        <button
+          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          @click="scrollToSection('skills')"
+        >
+          技术栈
+        </button>
+
+        <button
+          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          @click="scrollToSection('projects')"
+        >
+          项目
+        </button>
+
+        <button
+          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          @click="scrollToSection('contact')"
+        >
+          联系
+        </button>
+      </nav>
     </section>
-    <section id="about" class="page">
-      <div class="about-section">
-        <h2>关于我</h2>
-        <div class="about-content">
-          <div v-for="(item, index) in aboutList" :key="index" class="about-item">
+    <section
+      id="about"
+      class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
+    >
+      <div class="box-border max-h-full w-full max-w-[760px] overflow-y-auto">
+        <h2 class="mb-8 text-[2rem] font-bold text-[#43566e] max-[600px]:text-2xl">关于我</h2>
+
+        <div class="flex flex-col gap-3 text-left">
+          <div
+            v-for="(item, index) in aboutList"
+            :key="index"
+            class="w-full rounded-lg transition-colors hover:bg-white/65"
+          >
             <button
-              class="about-question"
+              class="flex w-full cursor-pointer items-center justify-between rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3 text-base font-medium text-[#43566e] focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#526b8a] max-[600px]:px-[15px] max-[600px]:py-[15px] max-[600px]:text-[0.9rem]"
               :aria-expanded="activeIndex === index"
               @click="toggleAnswer(index)"
             >
               <span>{{ item.question }}</span>
-              <span class="about-icon">{{ activeIndex === index ? '−' : '+' }}</span>
+
+              <span class="shrink-0 text-2xl text-[#526b8a]">
+                {{ activeIndex === index ? '−' : '+' }}
+              </span>
             </button>
-            <div v-if="activeIndex === index" class="about-answer">
-              <p>{{ item.answer }}</p>
+
+            <div
+              v-if="activeIndex === index"
+              class="rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3 text-[#43566e] max-[600px]:px-[15px] max-[600px]:pb-[15px] max-[600px]:pt-0"
+            >
+              <p
+                class="m-0 text-[0.95rem] leading-normal text-[#526174] max-[600px]:text-[0.85rem]"
+              >
+                {{ item.answer }}
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="page">
-      <div class="experience-section">
-        <h2 class="experience-title">工作经历</h2>
-        <p class="experience-subtitle">我的职业经历与成长</p>
+    <section
+      id="experience"
+      class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
+    >
+      <div class="mx-auto w-full max-w-5xl">
+        <h2 class="mb-2 text-2xl font-bold text-slate-700 sm:text-3xl">工作经历</h2>
+        <p class="mb-6 text-sm text-slate-500 sm:mb-8 sm:text-base">我的职业经历与成长</p>
 
-        <div class="experience-list" :class="{ 'experience-visible': experienceVisible }">
+        <div
+          class="experience-list grid w-full grid-cols-1 gap-4 text-left md:grid-cols-2 md:gap-6"
+          :class="{ 'experience-visible': experienceVisible }"
+        >
           <!-- 第一份工作 -->
-          <div class="experience-card" data-direction="left">
-            <div class="experience-header">
-              <h3>软件测试</h3>
-              <p class="experience-time">2026年9月 — 2027年2月</p>
+          <div
+            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            data-direction="left"
+          >
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="m-0 text-[21px] font-semibold text-[#43566e] max-[650px]:text-[19px]">
+                软件测试
+              </h3>
+              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-[#8291a5]">
+                2026年9月 — 2027年2月
+              </p>
             </div>
-            <h5>东莞缀梦智能科技有限公司</h5>
+            <h5 class="mt-2 mb-0 text-sm font-semibold text-[#43566e]">东莞缀梦智能科技有限公司</h5>
 
-            <div class="experience-divider" />
+            <div class="mb-5 h-px bg-[#e1eaf3]" />
 
-            <h4>工作内容</h4>
-            <p class="experience-description">
+            <h4 class="mb-2.5 text-[15px] font-semibold text-[#526b8a]">工作内容</h4>
+            <p class="m-0 text-sm leading-[1.9] text-[#637287]">
               功能测试： 负责「爱刻」「Umove」两款
               APP功能测试，验证蓝牙设备连接、玩具绑定及通话等功能，排查功能异常。 <br />
               缺陷管理：编写测试报告及 Bug 报告，记录缺陷并跟进问题反馈与验证。 <br />
@@ -70,20 +199,25 @@
               产品协作：参与产品网页功能评审与完善，了解产品上线流程及 Android、iOS 平台差异。
             </p>
           </div>
-
           <!-- 第二份工作 -->
-          <div class="experience-card" data-direction="right">
-            <div class="experience-header">
-              <h3>工艺工程师</h3>
-              <p class="experience-time">2026年2月 — 2026年8月</p>
+          <div
+            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            data-direction="right"
+          >
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="m-0 text-[21px] font-semibold text-[#43566e] max-[650px]:text-[19px]">
+                工艺工程师
+              </h3>
+              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-[#8291a5]">
+                2026年2月 — 2026年8月
+              </p>
             </div>
+            <h5 class="mt-2 mb-0 text-sm font-semibold text-[#43566e]">广东保伦电子股份有限公司</h5>
 
-            <h5>广东保伦电子股份有限公司</h5>
+            <div class="mb-5 h-px bg-[#e1eaf3]" />
 
-            <div class="experience-divider" />
-
-            <h4>工作内容</h4>
-            <p class="experience-description">
+            <h4 class="mb-2.5 text-[15px] font-semibold text-[#526b8a]">工作内容</h4>
+            <p class="m-0 text-sm leading-[1.9] text-[#637287]">
               流程规范： 负责装配、半成品及调试全流程 SOP 编写，运用边界值、场景法等测试思维
               拆解产品功能，规范异常操作处理流程。<br />
               硬件调试：熟练使用示波器、万用表进行信号测试与故障定位，独立搭建测试环境并协
@@ -96,168 +230,420 @@
       </div>
     </section>
 
-    <section id="skills" class="page">
-      <div class="skills-section">
-        <p class="skills-label">MY SKILLS</p>
-        <h2 class="skills-title">技术栈</h2>
+    <section
+      id="skills"
+      class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
+    >
+      <div class="mx-auto box-border w-full max-w-[640px]">
+        <p class="mb-2 text-[11px] tracking-[4px] text-[#8291a5]">MY SKILLS</p>
 
-        <div class="skills-grid" :class="{ 'skills-visible': skillsVisible }">
-          <div class="skill-item">
-            <img src="/images/HTML5.svg" alt="HTML" class="skill-image" />
-            <div class="skill-overlay"><span>HTML</span></div>
+        <h2
+          class="mb-6 text-[28px] font-bold text-[#43566e] max-[600px]:mb-5 max-[600px]:text-[25px]"
+        >
+          技术栈
+        </h2>
+
+        <div
+          class="skills-grid grid w-full grid-cols-4 items-center justify-items-center gap-5 max-[600px]:gap-3"
+          :class="{ 'skills-visible': skillsVisible }"
+        >
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/HTML5.svg"
+              alt="HTML"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >HTML</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/css-3.svg" alt="CSS" class="skill-image" />
-            <div class="skill-overlay"><span>CSS</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/css-3.svg"
+              alt="CSS"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >CSS</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/javascript.svg" alt="JavaScript" class="skill-image" />
-            <div class="skill-overlay"><span>JavaScript</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/javascript.svg"
+              alt="JavaScript"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >JavaScript</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/typescript-icon.svg" alt="TypeScript" class="skill-image" />
-            <div class="skill-overlay"><span>TypeScript</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/typescript-icon.svg"
+              alt="TypeScript"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >TypeScript</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/nodejs.svg" alt="Node.js" class="skill-image" />
-            <div class="skill-overlay"><span>Node.js</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/nodejs.svg"
+              alt="Node.js"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Node.js</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/vue.svg" alt="Vue.js" class="skill-image" />
-            <div class="skill-overlay"><span>Vue.js</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/vue.svg"
+              alt="Vue.js"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Vue.js</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/nuxt-icon.svg" alt="Nuxt.js" class="skill-image" />
-            <div class="skill-overlay"><span>Nuxt.js</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/nuxt-icon.svg"
+              alt="Nuxt.js"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Nuxt.js</span
+              >
+            </div>
           </div>
-          <div class="skill-item">
-            <img src="/images/spring.svg" alt="Spring Boot" class="skill-image" />
-            <div class="skill-overlay"><span>Spring Boot</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/spring.svg"
+              alt="Spring Boot"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Spring Boot</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/python.svg" alt="Python" class="skill-image" />
-            <div class="skill-overlay"><span>Python</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/python.svg"
+              alt="Python"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Python</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/mysql.svg" alt="MySQL" class="skill-image" />
-            <div class="skill-overlay"><span>MySQL</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/mysql.svg"
+              alt="MySQL"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >MySQL</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/git-icon.svg" alt="Git" class="skill-image" />
-            <div class="skill-overlay"><span>Git</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/git-icon.svg"
+              alt="Git"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Git</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/github-icon.svg" alt="GitHub" class="skill-image" />
-            <div class="skill-overlay"><span>GitHub</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/github-icon.svg"
+              alt="GitHub"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >GitHub</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/java.svg" alt="Java" class="skill-image" />
-            <div class="skill-overlay"><span>Java</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/java.svg"
+              alt="Java"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Java</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
             <img
               src="/images/Visual Studio Code (VS Code).svg"
               alt="Visual Studio Code"
-              class="skill-image"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
             />
-            <div class="skill-overlay"><span>Visual Studio Code</span></div>
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Visual Studio Code</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/IntelliJ IDEA.svg" alt="IntelliJ IDEA" class="skill-image" />
-            <div class="skill-overlay"><span>IntelliJ IDEA</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/IntelliJ IDEA.svg"
+              alt="IntelliJ IDEA"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >IntelliJ IDEA</span
+              >
+            </div>
           </div>
 
-          <div class="skill-item">
-            <img src="/images/Android Studio.svg" alt="Android Studio" class="skill-image" />
-            <div class="skill-overlay"><span>Android Studio</span></div>
+          <div
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+          >
+            <img
+              src="/images/Android Studio.svg"
+              alt="Android Studio"
+              class="block size-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.08]"
+            />
+            <div
+              class="absolute inset-0 z-[2] flex items-center justify-center rounded-full bg-[rgba(132,177,233,0.72)] opacity-0 backdrop-blur-[3px] transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <span class="break-words px-1 text-center text-sm font-semibold text-white sm:text-lg"
+                >Android Studio</span
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="page">
-      <div class="projects-section">
-        <p class="projects-label">MY PROJECTS</p>
-        <h2 class="projects-title">项目实践</h2>
+    <section
+      id="projects"
+      class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
+    >
+      <div class="mx-auto box-border w-full max-w-[760px] text-center">
+        <p class="mb-[6px] text-[11px] tracking-[4px] text-[#8291a5]">MY PROJECTS</p>
+        <h2
+          class="mb-[18px] text-[28px] font-bold text-[#43566e] max-[600px]:mb-[14px] max-[600px]:text-[25px]"
+        >
+          项目实践
+        </h2>
 
-        <div class="projects-list">
-          <article class="project-card">
+        <div class="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          <article
+            class="min-w-0 overflow-hidden rounded-2xl border border-sky-100 bg-white/80 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
             <img
               src="/images/爱刻.png"
               alt="爱刻 APP 功能展示"
-              class="project-image"
+              class="mx-auto mt-4 block h-40 w-[calc(100%-2rem)] cursor-zoom-in rounded-xl object-contain transition-transform duration-300 hover:scale-[1.02] sm:h-48"
               @click="openPreview('/images/爱刻.png', '爱刻 APP 功能展示')"
             />
 
-            <div class="project-content">
-              <span class="project-type">移动端 </span>
-              <h3>爱刻</h3>
-              <p class="project-description">
+            <div class="p-4 sm:p-5">
+              <span class="text-xs tracking-wide text-slate-500">移动端 </span>
+              <h3 class="mt-2 text-xl font-bold text-slate-700">爱刻</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
                 智能设备配套应用，围绕蓝牙连接、设备控制及应用页面， 验证功能是否正常运行。
               </p>
 
-              <div class="project-divider" />
+              <div class="my-3.5 h-px bg-[#e1eaf3]" />
 
-              <h4>核心测试工作</h4>
-              <ul class="project-work">
-                <li>蓝牙连接与设备配对验证</li>
-                <li>设备控制及玩具联动通话测试</li>
-                <li>社交页面与个人中心功能测试</li>
-                <li>编写 Bug 报告及测试报告</li>
+              <h4 class="mb-2.5 text-[13px] font-semibold text-[#526b8a]">核心测试工作</h4>
+              <ul class="m-0 grid list-none gap-[7px] p-0">
+                <li
+                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                >
+                  蓝牙连接与设备配对验证
+                </li>
+                <li
+                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                >
+                  设备控制及玩具联动通话测试
+                </li>
+                <li
+                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                >
+                  社交页面与个人中心功能测试
+                </li>
+                <li
+                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                >
+                  编写 Bug 报告及测试报告
+                </li>
               </ul>
 
-              <div class="project-tags">
-                <span>功能测试</span>
-                <span>蓝牙连接</span>
-                <span>移动端测试</span>
-                <span>缺陷管理</span>
+              <div class="mt-[15px] flex flex-wrap gap-1.5">
+                <span
+                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  >功能测试</span
+                >
+                <span
+                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  >蓝牙连接</span
+                >
+                <span
+                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  >移动端测试</span
+                >
+                <span
+                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  >缺陷管理</span
+                >
               </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <article
+            class="min-w-0 overflow-hidden rounded-2xl border border-sky-100 bg-white/80 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
             <img
               src="/images/Umove网页.png"
               alt="Umove 网页测试展示"
-              class="project-image"
+              class="mx-auto mt-4 block h-40 w-[calc(100%-2rem)] max-h-[200px] cursor-zoom-in rounded-xl object-contain transition-transform duration-300 hover:scale-[1.02] sm:h-48"
               @click="openPreview('/images/Umove网页.png', 'Umove 网页测试展示')"
             />
 
-            <div class="project-content">
-              <span class="project-type">Web 端</span>
-              <h3>Umove 网页</h3>
-              <p class="project-description">
-                对 Umove 网页进行功能测试，验证页面跳转是否正常， 检查各项功能能否正常使用。
+            <div class="p-4 sm:p-5">
+              <span class="text-[11px] tracking-[1px] text-[#8291a5]"> Web 端 </span>
+
+              <h3 class="mt-2 text-xl font-bold text-slate-700">Umove 网页</h3>
+
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                对 Umove 网页进行功能测试，验证页面跳转是否正常，检查各项功能能否正常使用。
               </p>
 
-              <div class="project-divider" />
+              <div class="my-3.5 h-px bg-[#e1eaf3]" />
 
-              <h4>核心测试工作</h4>
-              <ul class="project-work">
-                <li>测试页面跳转与导航功能</li>
-                <li>验证页面功能及交互是否正常</li>
-                <li>检查异常情况并记录问题</li>
-                <li>整理 Bug 报告并反馈测试结果</li>
+              <h4 class="mb-2.5 text-[13px] font-semibold text-[#526b8a]">核心测试工作</h4>
+
+              <ul class="m-0 grid list-none gap-[7px] p-0">
+                <li
+                  v-for="item in [
+                    '测试页面跳转与导航功能',
+                    '验证页面功能及交互是否正常',
+                    '检查异常情况并记录问题',
+                    '整理 Bug 报告并反馈测试结果',
+                  ]"
+                  :key="item"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                >
+                  {{ item }}
+                </li>
               </ul>
 
-              <div class="project-tags">
-                <span>Web 测试</span>
-                <span>页面跳转</span>
-                <span>功能测试</span>
-                <span>缺陷管理</span>
+              <div class="mt-[15px] flex flex-wrap gap-1.5">
+                <span
+                  v-for="tag in ['Web 测试', '页面跳转', '功能测试', '缺陷管理']"
+                  :key="tag"
+                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                >
+                  {{ tag }}
+                </span>
               </div>
             </div>
           </article>
@@ -267,60 +653,115 @@
 
     <div
       v-if="previewVisible"
-      class="image-preview"
+      class="fixed inset-0 z-[9999] box-border flex items-center justify-center bg-[rgba(12,18,30,0.88)] p-10 backdrop-blur-[6px] max-[600px]:p-4"
       @click.self="closePreview"
       @keydown.esc="closePreview"
     >
-      <button class="preview-close" aria-label="关闭图片预览" @click="closePreview">×</button>
+      <button
+        class="absolute top-5 right-7 flex size-[42px] cursor-pointer items-center justify-center rounded-full border border-white/30 bg-white/15 p-0 text-[32px] leading-none text-white transition-colors hover:bg-white/30 max-[600px]:top-3 max-[600px]:right-3"
+        aria-label="关闭图片预览"
+        @click="closePreview"
+      >
+        ×
+      </button>
 
-      <img :src="previewImage" :alt="previewAlt" class="preview-image" @click.stop />
+      <img
+        :src="previewImage"
+        :alt="previewAlt"
+        class="block h-auto w-auto max-h-[88vh] max-w-[90vw] cursor-zoom-out rounded-[10px] object-contain shadow-[0_12px_40px_rgba(0,0,0,0.3)] max-[600px]:max-h-[82vh] max-[600px]:max-w-[94vw]"
+        @click.stop
+      />
     </div>
 
-    <section id="contact" class="page">
-      <div class="contact-section">
-        <p class="contact-label">CONTACT</p>
-        <h2>让我们聊聊吧。</h2>
-        <p class="contact-subtitle">如果你对我的经历或项目感兴趣，欢迎与我联系。</p>
+    <section
+      id="contact"
+      class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
+    >
+      <div class="mx-auto box-border w-full max-w-[650px]">
+        <p class="mb-[18px] text-[13px] tracking-[5px] text-[#8291a5]">CONTACT</p>
 
-        <div class="contact-info">
-          <a href="mailto:2425368446@qq.com" class="contact-item">
-            <span class="contact-icon">✉</span>
+        <h2 class="mb-3 text-[30px] font-bold text-[#43566e] max-[600px]:text-[25px]">
+          让我们聊聊吧。
+        </h2>
+
+        <p class="mb-7 text-sm leading-[1.8] text-[#8291a5]">
+          如果你对我的经历或项目感兴趣，欢迎与我联系。
+        </p>
+
+        <div class="mb-8 flex flex-col items-center gap-[18px] max-[600px]:items-start">
+          <a
+            href="mailto:2425368446@qq.com"
+            class="flex items-center gap-3 text-[15px] text-[#43566e] no-underline"
+          >
+            <span class="text-[21px] text-[#526b8a]">✉</span>
             <span>2425368446@qq.com</span>
           </a>
 
-          <div class="contact-item">
-            <span class="contact-icon">☎</span>
+          <div class="flex items-center gap-3 text-[15px] text-[#43566e]">
+            <span class="text-[21px] text-[#526b8a]">☎</span>
             <span>13356461672</span>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">💬</span>
+
+          <div class="flex items-center gap-3 text-[15px] text-[#43566e]">
+            <span class="text-[21px] text-[#526b8a]">💬</span>
             <span>Clarence_0813</span>
           </div>
         </div>
 
-        <form class="contact-form" @submit.prevent="sendMessage">
-          <div class="contact-row">
-            <input v-model.trim="contactForm.name" type="text" placeholder="姓名" required />
-            <input v-model.trim="contactForm.email" type="email" placeholder="邮箱" required />
+        <form class="flex w-full flex-col gap-3" @submit.prevent="sendMessage">
+          <div class="grid grid-cols-2 gap-2.5 max-[600px]:grid-cols-1">
+            <input
+              v-model.trim="contactForm.name"
+              type="text"
+              placeholder="姓名"
+              required
+              class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+            />
+
+            <input
+              v-model.trim="contactForm.email"
+              type="email"
+              placeholder="邮箱"
+              required
+              class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+            />
           </div>
 
-          <input v-model.trim="contactForm.subject" type="text" placeholder="主题" required />
+          <input
+            v-model.trim="contactForm.subject"
+            type="text"
+            placeholder="主题"
+            required
+            class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+          />
 
-          <textarea v-model.trim="contactForm.message" placeholder="留言" rows="4" required />
+          <textarea
+            v-model.trim="contactForm.message"
+            placeholder="留言"
+            rows="4"
+            required
+            class="box-border min-h-[100px] w-full min-w-0 resize-y rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+          />
 
-          <button type="submit">发送留言</button>
+          <button
+            type="submit"
+            class="cursor-pointer rounded-lg border border-[#526b8a] bg-[#526b8a] px-4 py-[13px] text-[15px] font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#43566e]"
+          >
+            发送留言
+          </button>
         </form>
       </div>
     </section>
 
     <button
-      class="back-to-home"
+      type="button"
       aria-label="返回首页"
       title="返回首页"
+      class="fixed bottom-4 right-4 z-[1000] flex size-12 flex-col items-center justify-center gap-0.5 rounded-full border border-sky-200/80 bg-white/90 text-slate-600 shadow-lg backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-sky-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 sm:bottom-7 sm:right-7 sm:size-[54px]"
       @click="scrollToSection('home')"
     >
-      <span class="back-arrow">↑</span>
-      <span class="back-text">首页</span>
+      <span class="text-xl leading-none">↑</span>
+      <span class="text-[10px] leading-none">首页</span>
     </button>
   </div>
 </template>
@@ -411,7 +852,7 @@ function startType() {
 onMounted(() => {
   startType()
 
-  const container = document.querySelector('.container')
+  const container = document.querySelector('.site-scroll')
   const skillsSection = document.getElementById('skills')
 
   if (container && skillsSection) {
@@ -428,7 +869,6 @@ onMounted(() => {
     skillsObserver.observe(skillsSection)
   }
 
-  // 工作经历进入视野时触发动画
   const experienceList = document.querySelector('.experience-list')
 
   if (container && experienceList) {
@@ -472,11 +912,22 @@ onUnmounted(() => {
 })
 
 function scrollToSection(sectionId) {
+  const container = document.querySelector('.site-scroll')
   const section = document.getElementById(sectionId)
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
-  }
+
+  if (!container || !section) return
+
+  const containerRect = container.getBoundingClientRect()
+  const sectionRect = section.getBoundingClientRect()
+
+  const top = sectionRect.top - containerRect.top + container.scrollTop
+
+  container.scrollTo({
+    top,
+    behavior: 'smooth',
+  })
 }
+
 function sendMessage() {
   const { name, email, subject, message } = contactForm.value
 
@@ -493,12 +944,20 @@ function openPreview(src, alt) {
   previewImage.value = src
   previewAlt.value = alt
   previewVisible.value = true
-  document.body.style.overflow = 'hidden'
+
+  const container = document.querySelector('.site-scroll')
+  if (container) {
+    container.style.overflowY = 'hidden'
+  }
 }
 
 function closePreview() {
   previewVisible.value = false
-  document.body.style.overflow = ''
+
+  const container = document.querySelector('.site-scroll')
+  if (container) {
+    container.style.overflowY = 'auto'
+  }
 }
 </script>
 
@@ -513,30 +972,8 @@ body {
 </style>
 
 <style scoped>
-/* 图片点击放大预览 */
-.project-image {
-  cursor: zoom-in;
-  transition: transform 0.25s ease;
-}
-
 .project-image:hover {
   transform: scale(1.02);
-}
-
-.image-preview {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 40px;
-  box-sizing: border-box;
-
-  background: rgba(12, 18, 30, 0.88);
-  backdrop-filter: blur(6px);
 }
 
 .preview-image {
@@ -551,27 +988,6 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 
   cursor: zoom-out;
-}
-
-.preview-close {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-
-  width: 42px;
-  height: 42px;
-  padding: 0;
-
-  color: #fff;
-  font-size: 32px;
-  line-height: 1;
-
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-
-  cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 .preview-close:hover {
@@ -761,99 +1177,6 @@ body {
   }
 }
 
-.contact-section {
-  width: 100%;
-  max-width: 650px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-.contact-label {
-  margin-bottom: 18px;
-  color: #8291a5;
-  font-size: 13px;
-  letter-spacing: 5px;
-}
-.contact-section h2 {
-  margin: 0 0 12px;
-  color: #43566e;
-  font-size: 30px;
-  font-weight: 700;
-}
-.contact-subtitle {
-  margin-bottom: 28px;
-  color: #8291a5;
-  font-size: 14px;
-  line-height: 1.8;
-}
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 32px;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #43566e;
-  font-size: 15px;
-  text-decoration: none;
-}
-.contact-icon {
-  color: #526b8a;
-  font-size: 21px;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-.contact-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  padding: 14px 16px;
-  color: #43566e;
-  font: inherit;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(153, 178, 205, 0.45);
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #526b8a;
-}
-.contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-.contact-form button {
-  padding: 13px;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  background: #526b8a;
-  border: 1px solid #526b8a;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.contact-form button:hover {
-  background: #43566e;
-  transform: translateY(-2px);
-}
-
 @media (max-width: 600px) {
   .contact-section h2 {
     font-size: 25px;
@@ -887,9 +1210,6 @@ body {
 }
 
 .experience-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
   width: 100%;
   text-align: left;
 }
@@ -919,34 +1239,6 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-}
-.experience-header h3 {
-  margin: 0;
-  font-size: 21px;
-  font-weight: 650;
-  color: #43566e;
-}
-.experience-time {
-  margin: 14px 0 18px;
-  font-size: 13px;
-  line-height: 1.7;
-  color: #8291a5;
-}
-.experience-divider {
-  height: 1px;
-  background: #e1eaf3;
-  margin-bottom: 20px;
-}
-.experience-card h4 {
-  margin: 0 0 10px;
-  font-size: 15px;
-  color: #526b8a;
-}
-.experience-description {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.9;
-  color: #637287;
 }
 @media (max-width: 650px) {
   .experience-title {
@@ -1013,67 +1305,7 @@ body {
   outline: 2px solid #526b8a;
   outline-offset: 4px;
 }
-.about-section {
-  width: 100%;
-  max-height: 100%;
-  overflow-y: auto;
-  max-width: 760px;
-  box-sizing: border-box;
-}
-.about-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #43566e;
-}
-.about-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: left;
-}
-.about-item {
-  width: 100%;
-}
-.about-item:hover {
-  background-color: rgba(255, 255, 255, 0.65);
-}
-.about-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: rgba(255, 255, 255, 0.65);
-  color: #43566e;
-  border: 1px solid rgba(153, 178, 205, 0.45);
-  border-radius: 8px;
-  cursor: pointer;
-}
-.about-question:focus-visible {
-  outline: 2px solid #526b8a;
-  outline-offset: -3px;
-}
-.about-icon {
-  font-size: 1.5rem;
-  font-shrink: 0;
-  color: #526b8a;
-}
-.about-answer {
-  padding: 12px 16px;
-  font-size: 0.95rem;
-  color: #43566e;
-  background-color: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(153, 178, 205, 0.45);
-  border-radius: 8px;
-}
-.about-answer p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #526174;
-}
+
 .btn-group {
   display: flex;
   gap: 16px;
@@ -1108,49 +1340,6 @@ body {
   outline-offset: 3cqmax;
 }
 
-template {
-  background: linear-gradient(135deg, #e0f2ff 0%, #ffffff 50%, #dbeafe 100%);
-}
-.page {
-  height: 100vh;
-  height: 100dvh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  box-sizing: border-box;
-  padding: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overscroll-behavior-y: contain;
-  text-align: center;
-  background: linear-gradient(135deg, #e0f2ff 0%, #ffffff 50%, #dbeafe 100%);
-  background-attachment: local;
-}
-.avatar {
-  width: 200px;
-  height: auto;
-  border-radius: 80%;
-  margin-bottom: 2rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-top: 2rem;
-}
-
-p {
-  font-size: 1.25rem;
-  color: #080505;
-}
 .cursor {
   animation: blink 0.7s infinite;
 }
@@ -1371,92 +1560,6 @@ p {
   transform: translateY(-4px) scale(1.03);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .skills-grid .skill-item {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-#home {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-#home::before,
-#home::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  filter: blur(65px);
-  pointer-events: none;
-  animation: home-glow 10s ease-in-out infinite alternate;
-}
-
-#home::before {
-  top: 8%;
-  left: 8%;
-  background: rgba(120, 181, 255, 0.2);
-}
-
-#home::after {
-  right: 8%;
-  bottom: 8%;
-  background: rgba(157, 205, 255, 0.25);
-  animation-delay: -5s;
-}
-
-@keyframes home-glow {
-  0% {
-    transform: translate(-40px, -25px) scale(0.85);
-  }
-
-  50% {
-    transform: translate(30px, 20px) scale(1.1);
-  }
-
-  100% {
-    transform: translate(70px, -35px) scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #home::before,
-  #home::after {
-    animation: none;
-  }
-}
-#home h1,
-#home .type-text,
-#home .btn-group {
-  position: relative;
-  z-index: 2;
-}
-
-.avatar-orbit {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-  margin-bottom: 2rem;
-  z-index: 0;
-}
-
-.avatar-orbit .avatar {
-  position: relative;
-  z-index: 0;
-  width: 200px;
-  height: auto;
-  border-radius: 80%;
-  margin: 0;
-}
-
 .orbit-ring,
 .ripple {
   position: absolute;
@@ -1465,77 +1568,6 @@ p {
   border-radius: 50%;
   pointer-events: none;
   box-sizing: border-box;
-}
-
-.orbit-ring {
-  z-index: -1;
-  border: 1px solid rgba(104, 159, 218, 0.2);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.ring-1 {
-  width: 250px;
-  height: 250px;
-}
-
-.ring-2 {
-  width: 410px;
-  height: 410px;
-}
-
-.ring-3 {
-  width: 500px;
-  height: 500px;
-}
-
-.ring-4 {
-  width: 650px;
-  height: 650px;
-}
-
-.ripple {
-  z-index: -1;
-  width: 210px;
-  height: 210px;
-  border: 1px solid rgba(186, 211, 240, 0.7);
-  opacity: 0;
-  animation: ripple-out 10s ease-out infinite;
-}
-
-.ripple-2 {
-  animation-delay: 1.66s;
-}
-
-.ripple-3 {
-  animation-delay: 3.33s;
-}
-
-@keyframes ripple-out {
-  0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 0.65;
-  }
-
-  70% {
-    opacity: 0.2;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(3.2);
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ripple {
-    animation: none;
-    opacity: 0;
-  }
 }
 
 .project-card {
@@ -1553,14 +1585,6 @@ p {
   transform: translateY(-4px);
   border-color: rgba(120, 175, 240, 0.65);
   box-shadow: 0 8px 22px rgba(40, 90, 160, 0.12);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .project-card,
-  .project-card:hover {
-    transition: none;
-    transform: none;
-  }
 }
 
 /* 工作经历卡片：初始状态 */
@@ -1635,14 +1659,10 @@ p {
   transform: translateY(-4px);
 }
 
-/* 尊重系统的减少动态效果设置 */
-@media (prefers-reduced-motion: reduce) {
-  .experience-card,
-  .experience-list.experience-visible .experience-card {
-    opacity: 1;
-    transform: none;
-    animation: none;
-    will-change: auto;
-  }
+.page-container .avatar-orbit .orbit-ring.ring-1,
+.page-container .avatar-orbit .orbit-ring.ring-2,
+.page-container .avatar-orbit .orbit-ring.ring-3,
+.page-container .avatar-orbit .orbit-ring.ring-4 {
+  border-color: rgba(147, 197, 253, 0.45);
 }
 </style>
