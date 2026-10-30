@@ -1,6 +1,6 @@
 <template>
   <div
-    class="site-scroll h-dvh w-full snap-y snap-mandatory overflow-x-hidden overflow-y-auto scroll-smooth overscroll-y-contain bg-[linear-gradient(135deg,#e0f2ff_0%,#ffffff_50%,#dbeafe_100%)] text-center"
+    class="site-scroll h-dvh w-full snap-y snap-mandatory overflow-x-hidden overflow-y-auto scroll-smooth overscroll-y-contain bg-[linear-gradient(135deg,#B9D6F2_0%,#ffffff_50%,#B9D6F2_100%)] text-center"
   >
     <section
       id="home"
@@ -9,12 +9,12 @@
       <!-- 淡蓝色氛围光，不再依赖原来的 #home::before / ::after -->
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute left-[5%] top-[8%] -z-10 size-48 rounded-full bg-sky-300/20 blur-3xl sm:size-72"
+        class="pointer-events-none absolute left-[5%] top-[8%] -z-10 size-48 rounded-full bg-brand-secondary/20 blur-3xl sm:size-72"
       />
 
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute bottom-[8%] right-[5%] -z-10 size-48 rounded-full bg-blue-200/30 blur-3xl sm:size-72"
+        class="pointer-events-none absolute bottom-[8%] right-[5%] -z-10 size-48 rounded-full bg-brand-light/40 blur-3xl sm:size-72"
       />
 
       <!-- 同心圆区域：整体根据屏幕宽度缩放 -->
@@ -24,38 +24,38 @@
         <!-- 四层淡蓝色同心圆 -->
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[38.46%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/50"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[38.46%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-secondary/50"
         />
 
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[63.08%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/45"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[63.08%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-primary/45"
         />
 
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[76.92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-300/40"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[76.92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-deep/40"
         />
 
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-full -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-sky-300/40"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-full -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-brand-deep/40"
         />
 
         <!-- 三层扩散波纹 -->
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 motion-safe:animate-[ripple-out_10s_ease-out_infinite] motion-reduce:hidden"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-light/80 opacity-0 motion-safe:animate-[ripple-out_10s_ease-out_infinite] motion-reduce:hidden"
         />
 
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:1.66s] motion-reduce:hidden"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-light/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:1.66s] motion-reduce:hidden"
         />
 
         <span
           aria-hidden="true"
-          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-sky-200/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:3.33s] motion-reduce:hidden"
+          class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[32.3%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-light/80 opacity-0 [animation:ripple-out_10s_ease-out_infinite] [animation-delay:3.33s] motion-reduce:hidden"
         />
 
         <!-- 头像 -->
@@ -68,14 +68,14 @@
 
       <!-- 姓名 -->
       <h1
-        class="-mt-[7%] relative z-10 text-2xl font-bold tracking-wide text-slate-800 sm:text-3xl md:text-4xl"
+        class="-mt-[7%] relative z-10 text-[30px] font-bold tracking-wide text-brand-dark sm:text-[34px] md:text-[38px]"
       >
         吴莞盈
       </h1>
 
       <!-- 打字机文字：保留原有 Vue 逻辑 -->
       <p
-        class="relative z-10 mt-5 min-h-7 max-w-full px-2 text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg"
+        class="relative z-10 mt-5 min-h-7 max-w-full px-2 text-[14px] leading-relaxed text-brand-deep sm:text-[16px] md:text-[17px]"
       >
         {{ typeText }}<span class="ml-1 inline-block animate-pulse">|</span>
       </p>
@@ -86,35 +86,35 @@
         class="relative z-10 mt-5 flex w-full max-w-xl flex-wrap items-center justify-center gap-2 sm:mt-6 sm:gap-3"
       >
         <button
-          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          class="rounded-lg border border-brand-light bg-white/85 px-4 py-2 text-[14px] text-brand-deep shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-light/40 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:text-[15px]"
           @click="scrollToSection('about')"
         >
           关于
         </button>
 
         <button
-          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          class="rounded-lg border border-brand-light bg-white/85 px-4 py-2 text-[14px] text-brand-deep shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-light/40 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:text-[15px]"
           @click="scrollToSection('experience')"
         >
           经历
         </button>
 
         <button
-          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          class="rounded-lg border border-brand-light bg-white/85 px-4 py-2 text-[14px] text-brand-deep shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-light/40 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:text-[15px]"
           @click="scrollToSection('skills')"
         >
           技术栈
         </button>
 
         <button
-          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          class="rounded-lg border border-brand-light bg-white/85 px-4 py-2 text-[14px] text-brand-deep shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-light/40 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:text-[15px]"
           @click="scrollToSection('projects')"
         >
           项目
         </button>
 
         <button
-          class="rounded-lg border border-sky-200 bg-white/70 px-4 py-2 text-sm text-slate-600 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:text-base"
+          class="rounded-lg border border-brand-light bg-white/85 px-4 py-2 text-[14px] text-brand-deep shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-light/40 hover:text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:text-[15px]"
           @click="scrollToSection('contact')"
         >
           联系
@@ -126,33 +126,35 @@
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
       <div class="box-border max-h-full w-full max-w-[760px] overflow-y-auto">
-        <h2 class="mb-8 text-[2rem] font-bold text-[#43566e] max-[600px]:text-2xl">关于我</h2>
+        <div class="mb-8">
+          <p class="mb-2 text-[12px] tracking-[4px] text-brand-secondary">ABOUT</p>
+
+          <h2 class="text-[28px] font-bold leading-tight text-brand-dark sm:text-[30px]">关于我</h2>
+        </div>
 
         <div class="flex flex-col gap-3 text-left">
           <div
             v-for="(item, index) in aboutList"
             :key="index"
-            class="w-full rounded-lg transition-colors hover:bg-white/65"
+            class="w-full rounded-lg transition-colors hover:bg-white/75"
           >
             <button
-              class="flex w-full cursor-pointer items-center justify-between rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3 text-base font-medium text-[#43566e] focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-[#526b8a] max-[600px]:px-[15px] max-[600px]:py-[15px] max-[600px]:text-[0.9rem]"
+              class="flex w-full cursor-pointer items-center justify-between rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3 text-[15px] sm:text-[16px] font-medium text-brand-dark focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-brand-primary max-[600px]:px-[15px] max-[600px]:py-[15px] max-[600px]:text-[0.9rem]"
               :aria-expanded="activeIndex === index"
               @click="toggleAnswer(index)"
             >
               <span>{{ item.question }}</span>
 
-              <span class="shrink-0 text-2xl text-[#526b8a]">
+              <span class="shrink-0 text-2xl text-brand-secondary">
                 {{ activeIndex === index ? '−' : '+' }}
               </span>
             </button>
 
             <div
               v-if="activeIndex === index"
-              class="rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3 text-[#43566e] max-[600px]:px-[15px] max-[600px]:pb-[15px] max-[600px]:pt-0"
+              class="rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3 text-brand-dark max-[600px]:px-[15px] max-[600px]:pb-[15px] max-[600px]:pt-0"
             >
-              <p
-                class="m-0 text-[0.95rem] leading-normal text-[#526174] max-[600px]:text-[0.85rem]"
-              >
+              <p class="m-0 text-[14px] leading-relaxed text-brand-deep sm:text-[15px]">
                 {{ item.answer }}
               </p>
             </div>
@@ -166,8 +168,15 @@
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
       <div class="mx-auto w-full max-w-5xl">
-        <h2 class="mb-2 text-2xl font-bold text-slate-700 sm:text-3xl">工作经历</h2>
-        <p class="mb-6 text-sm text-slate-500 sm:mb-8 sm:text-base">我的职业经历与成长</p>
+        <div class="mb-6 sm:mb-8">
+          <p class="mb-2 text-[12px] tracking-[4px] text-brand-secondary">EXPERIENCE</p>
+
+          <h2 class="text-[28px] font-bold leading-tight text-brand-dark sm:text-[30px]">
+            工作经历
+          </h2>
+
+          <p class="text-sm text-brand-deep/65">我的职业经历与成长</p>
+        </div>
 
         <div
           class="experience-list grid w-full grid-cols-1 gap-4 text-left md:grid-cols-2 md:gap-6"
@@ -175,23 +184,25 @@
         >
           <!-- 第一份工作 -->
           <div
-            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            class="experience-card min-w-0 rounded-2xl border border-brand-light/70 bg-white/85 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
             data-direction="left"
           >
             <div class="flex items-center justify-between gap-3">
-              <h3 class="m-0 text-[21px] font-semibold text-[#43566e] max-[650px]:text-[19px]">
+              <h3 class="m-0 text-[21px] font-semibold text-brand-dark max-[650px]:text-[19px]">
                 软件测试
               </h3>
-              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-[#8291a5]">
+              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-brand-secondary">
                 2026年9月 — 2027年2月
               </p>
             </div>
-            <h5 class="mt-2 mb-0 text-sm font-semibold text-[#43566e]">东莞缀梦智能科技有限公司</h5>
+            <h5 class="mt-2 mb-0 text-sm font-semibold text-brand-dark">
+              东莞缀梦智能科技有限公司
+            </h5>
 
-            <div class="mb-5 h-px bg-[#e1eaf3]" />
+            <div class="mb-5 h-px bg-brand-light/70" />
 
-            <h4 class="mb-2.5 text-[15px] font-semibold text-[#526b8a]">工作内容</h4>
-            <p class="m-0 text-sm leading-[1.9] text-[#637287]">
+            <h4 class="mb-2.5 text-[15px] font-semibold text-brand-secondary">工作内容</h4>
+            <p class="m-0 text-sm leading-[1.9] text-brand-deep">
               功能测试： 负责「爱刻」「Umove」两款
               APP功能测试，验证蓝牙设备连接、玩具绑定及通话等功能，排查功能异常。 <br />
               缺陷管理：编写测试报告及 Bug 报告，记录缺陷并跟进问题反馈与验证。 <br />
@@ -201,23 +212,25 @@
           </div>
           <!-- 第二份工作 -->
           <div
-            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            class="experience-card min-w-0 rounded-2xl border border-brand-light/70 bg-white/85 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
             data-direction="right"
           >
             <div class="flex items-center justify-between gap-3">
-              <h3 class="m-0 text-[21px] font-semibold text-[#43566e] max-[650px]:text-[19px]">
+              <h3 class="m-0 text-[21px] font-semibold text-brand-dark max-[650px]:text-[19px]">
                 工艺工程师
               </h3>
-              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-[#8291a5]">
+              <p class="mt-[14px] mb-[18px] text-[13px] leading-[1.7] text-brand-secondary">
                 2026年2月 — 2026年8月
               </p>
             </div>
-            <h5 class="mt-2 mb-0 text-sm font-semibold text-[#43566e]">广东保伦电子股份有限公司</h5>
+            <h5 class="mt-2 mb-0 text-sm font-semibold text-brand-dark">
+              广东保伦电子股份有限公司
+            </h5>
 
-            <div class="mb-5 h-px bg-[#e1eaf3]" />
+            <div class="mb-5 h-px bg-brand-light/70" />
 
-            <h4 class="mb-2.5 text-[15px] font-semibold text-[#526b8a]">工作内容</h4>
-            <p class="m-0 text-sm leading-[1.9] text-[#637287]">
+            <h4 class="mb-2.5 text-[15px] font-semibold text-brand-secondary">工作内容</h4>
+            <p class="m-0 text-sm leading-[1.9] text-brand-deep">
               流程规范： 负责装配、半成品及调试全流程 SOP 编写，运用边界值、场景法等测试思维
               拆解产品功能，规范异常操作处理流程。<br />
               硬件调试：熟练使用示波器、万用表进行信号测试与故障定位，独立搭建测试环境并协
@@ -235,20 +248,16 @@
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
       <div class="mx-auto box-border flex w-full max-w-[640px] flex-col items-center">
-        <p class="mb-2 text-[11px] tracking-[4px] text-[#8291a5]">MY SKILLS</p>
+        <p class="mb-2 text-[12px] tracking-[4px] text-brand-secondary">SKILLS</p>
 
-        <h2
-          class="mb-6 text-[28px] font-bold text-[#43566e] max-[600px]:mb-5 max-[600px]:text-[25px]"
-        >
-          技术栈
-        </h2>
+        <h2 class="text-[28px] font-bold leading-tight text-brand-dark sm:text-[30px]">技术栈</h2>
 
         <div
           class="skills-grid mx-auto grid w-full max-w-[560px] grid-cols-4 items-center justify-items-center gap-5 max-[600px]:gap-3"
           :class="{ 'skills-visible': skillsVisible }"
         >
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/HTML5.svg"
@@ -265,7 +274,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/css-3.svg"
@@ -282,7 +291,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/javascript.svg"
@@ -299,7 +308,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/typescript-icon.svg"
@@ -316,7 +325,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/nodejs.svg"
@@ -333,7 +342,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/vue.svg"
@@ -350,7 +359,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/nuxt-icon.svg"
@@ -366,7 +375,7 @@
             </div>
           </div>
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/spring.svg"
@@ -383,7 +392,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/python.svg"
@@ -400,7 +409,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/mysql.svg"
@@ -417,7 +426,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/git-icon.svg"
@@ -434,7 +443,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/github-icon.svg"
@@ -451,7 +460,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/java.svg"
@@ -468,7 +477,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/Visual Studio Code (VS Code).svg"
@@ -485,7 +494,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/IntelliJ IDEA.svg"
@@ -502,7 +511,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-brand-light/70 bg-white/85 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/Android Studio.svg"
@@ -526,16 +535,16 @@
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
       <div class="mx-auto box-border w-full max-w-[760px] text-center">
-        <p class="mb-[6px] text-[11px] tracking-[4px] text-[#8291a5]">MY PROJECTS</p>
+        <p class="mb-2 text-[12px] tracking-[4px] text-brand-secondary">PROJECTS</p>
         <h2
-          class="mb-[18px] text-[28px] font-bold text-[#43566e] max-[600px]:mb-[14px] max-[600px]:text-[25px]"
+          class="mb-[18px] text-[28px] font-bold text-brand-dark max-[600px]:mb-[14px] max-[600px]:text-[28px]"
         >
           项目实践
         </h2>
 
         <div class="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
           <article
-            class="min-w-0 overflow-hidden rounded-2xl border border-sky-100 bg-white/80 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            class="min-w-0 overflow-hidden rounded-2xl border border-brand-light/70 bg-white/85 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <img
               src="/images/爱刻.png"
@@ -545,33 +554,33 @@
             />
 
             <div class="p-4 sm:p-5">
-              <span class="text-xs tracking-wide text-slate-500">移动端 </span>
-              <h3 class="mt-2 text-xl font-bold text-slate-700">爱刻</h3>
-              <p class="mt-2 text-sm leading-7 text-slate-600">
+              <span class="text-[12px] tracking-[1px] text-brand-secondary">移动端 </span>
+              <h3 class="mt-2 text-xl font-bold text-brand-deep">爱刻</h3>
+              <p class="mt-2 text-sm leading-7 text-brand-deep">
                 智能设备配套应用，围绕蓝牙连接、设备控制及应用页面， 验证功能是否正常运行。
               </p>
 
-              <div class="my-3.5 h-px bg-[#e1eaf3]" />
+              <div class="my-3.5 h-px bg-brand-light/70" />
 
-              <h4 class="mb-2.5 text-[13px] font-semibold text-[#526b8a]">核心测试工作</h4>
+              <h4 class="mb-2.5 text-[13px] font-semibold text-brand-secondary">核心测试工作</h4>
               <ul class="m-0 grid list-none gap-[7px] p-0">
                 <li
-                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-brand-deep before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-brand-secondary before:content-['']"
                 >
                   蓝牙连接与设备配对验证
                 </li>
                 <li
-                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-brand-deep before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-brand-secondary before:content-['']"
                 >
                   设备控制及玩具联动通话测试
                 </li>
                 <li
-                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-brand-deep before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-brand-secondary before:content-['']"
                 >
                   社交页面与个人中心功能测试
                 </li>
                 <li
-                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-brand-deep before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-brand-secondary before:content-['']"
                 >
                   编写 Bug 报告及测试报告
                 </li>
@@ -579,19 +588,19 @@
 
               <div class="mt-[15px] flex flex-wrap gap-1.5">
                 <span
-                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  class="rounded-full border border-brand-light/70 bg-brand-light/40 px-[9px] py-[5px] text-[10px] text-brand-secondary"
                   >功能测试</span
                 >
                 <span
-                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  class="rounded-full border border-brand-light/70 bg-brand-light/40 px-[9px] py-[5px] text-[10px] text-brand-secondary"
                   >蓝牙连接</span
                 >
                 <span
-                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  class="rounded-full border border-brand-light/70 bg-brand-light/40 px-[9px] py-[5px] text-[10px] text-brand-secondary"
                   >移动端测试</span
                 >
                 <span
-                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  class="rounded-full border border-brand-light/70 bg-brand-light/40 px-[9px] py-[5px] text-[10px] text-brand-secondary"
                   >缺陷管理</span
                 >
               </div>
@@ -599,7 +608,7 @@
           </article>
 
           <article
-            class="min-w-0 overflow-hidden rounded-2xl border border-sky-100 bg-white/80 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+            class="min-w-0 overflow-hidden rounded-2xl border border-brand-light/70 bg-white/85 text-left shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <img
               src="/images/Umove网页.png"
@@ -609,17 +618,17 @@
             />
 
             <div class="p-4 sm:p-5">
-              <span class="text-[11px] tracking-[1px] text-[#8291a5]"> Web 端 </span>
+              <span class="text-[11px] tracking-[1px] text-brand-secondary"> Web 端 </span>
 
-              <h3 class="mt-2 text-xl font-bold text-slate-700">Umove 网页</h3>
+              <h3 class="mt-2 text-xl font-bold text-brand-deep">Umove 网页</h3>
 
-              <p class="mt-2 text-sm leading-7 text-slate-600">
+              <p class="mt-2 text-sm leading-7 text-brand-deep">
                 对 Umove 网页进行功能测试，验证页面跳转是否正常，检查各项功能能否正常使用。
               </p>
 
-              <div class="my-3.5 h-px bg-[#e1eaf3]" />
+              <div class="my-3.5 h-px bg-brand-light/70" />
 
-              <h4 class="mb-2.5 text-[13px] font-semibold text-[#526b8a]">核心测试工作</h4>
+              <h4 class="mb-2.5 text-[13px] font-semibold text-brand-secondary">核心测试工作</h4>
 
               <ul class="m-0 grid list-none gap-[7px] p-0">
                 <li
@@ -630,7 +639,7 @@
                     '整理 Bug 报告并反馈测试结果',
                   ]"
                   :key="item"
-                  class="relative pl-[13px] text-xs leading-[1.6] text-[#637287] before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-[#829bb8] before:content-['']"
+                  class="relative pl-[13px] text-xs leading-[1.6] text-brand-deep before:absolute before:left-0 before:top-[7px] before:size-[5px] before:rounded-full before:bg-brand-secondary before:content-['']"
                 >
                   {{ item }}
                 </li>
@@ -640,7 +649,7 @@
                 <span
                   v-for="tag in ['Web 测试', '页面跳转', '功能测试', '缺陷管理']"
                   :key="tag"
-                  class="rounded-full border border-[rgba(153,178,205,0.3)] bg-[#edf3fa] px-[9px] py-[5px] text-[10px] text-[#526b8a]"
+                  class="rounded-full border border-brand-light/70 bg-brand-light/40 px-[9px] py-[5px] text-[10px] text-brand-secondary"
                 >
                   {{ tag }}
                 </span>
@@ -678,32 +687,32 @@
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
       <div class="mx-auto box-border w-full max-w-[650px]">
-        <p class="mb-[18px] text-[13px] tracking-[5px] text-[#8291a5]">CONTACT</p>
+        <p class="mb-2 text-[11px] tracking-[4px] text-brand-secondary">CONTACT</p>
 
-        <h2 class="mb-3 text-[30px] font-bold text-[#43566e] max-[600px]:text-[25px]">
+        <h2 class="mb-3 text-[28px] font-bold text-brand-dark max-[600px]:text-[28px]">
           让我们聊聊吧。
         </h2>
 
-        <p class="mb-7 text-sm leading-[1.8] text-[#8291a5]">
+        <p class="mb-7 text-sm leading-[1.8] text-brand-secondary">
           如果你对我的经历或项目感兴趣，欢迎与我联系。
         </p>
 
         <div class="mb-8 flex flex-col items-center gap-[18px] max-[600px]:items-start">
           <a
             href="mailto:2425368446@qq.com"
-            class="flex items-center gap-3 text-[15px] text-[#43566e] no-underline"
+            class="flex items-center gap-3 text-[15px] text-brand-dark no-underline"
           >
-            <span class="text-[21px] text-[#526b8a]">✉</span>
+            <span class="text-[21px] text-brand-secondary">✉</span>
             <span>2425368446@qq.com</span>
           </a>
 
-          <div class="flex items-center gap-3 text-[15px] text-[#43566e]">
-            <span class="text-[21px] text-[#526b8a]">☎</span>
+          <div class="flex items-center gap-3 text-[15px] text-brand-dark">
+            <span class="text-[21px] text-brand-secondary">☎</span>
             <span>13356461672</span>
           </div>
 
-          <div class="flex items-center gap-3 text-[15px] text-[#43566e]">
-            <span class="text-[21px] text-[#526b8a]">💬</span>
+          <div class="flex items-center gap-3 text-[15px] text-brand-dark">
+            <span class="text-[21px] text-brand-secondary">💬</span>
             <span>Clarence_0813</span>
           </div>
         </div>
@@ -715,7 +724,7 @@
               type="text"
               placeholder="姓名"
               required
-              class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+              class="box-border w-full min-w-0 rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary"
             />
 
             <input
@@ -723,7 +732,7 @@
               type="email"
               placeholder="邮箱"
               required
-              class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+              class="box-border w-full min-w-0 rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary"
             />
           </div>
 
@@ -732,7 +741,7 @@
             type="text"
             placeholder="主题"
             required
-            class="box-border w-full min-w-0 rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+            class="box-border w-full min-w-0 rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary"
           />
 
           <textarea
@@ -740,12 +749,12 @@
             placeholder="留言"
             rows="4"
             required
-            class="box-border min-h-[100px] w-full min-w-0 resize-y rounded-lg border border-[rgba(153,178,205,0.45)] bg-white/65 px-4 py-3.5 text-sm text-[#43566e] outline-none transition-colors focus:border-[#526b8a]"
+            class="box-border min-h-[100px] w-full min-w-0 resize-y rounded-lg border border-brand-light/70 bg-white/75 px-4 py-3.5 text-sm text-brand-dark outline-none transition-colors focus:border-brand-primary"
           />
 
           <button
             type="submit"
-            class="cursor-pointer rounded-lg border border-[#526b8a] bg-[#526b8a] px-4 py-[13px] text-[15px] font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#43566e]"
+            class="cursor-pointer rounded-lg border border-brand-primary bg-brand-primary px-4 py-[13px] text-[15px] font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-dark"
           >
             发送留言
           </button>
@@ -757,7 +766,7 @@
       type="button"
       aria-label="返回首页"
       title="返回首页"
-      class="fixed bottom-4 right-4 z-[1000] flex size-12 flex-col items-center justify-center gap-0.5 rounded-full border border-sky-200/80 bg-white/90 text-slate-600 shadow-lg backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-sky-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 sm:bottom-7 sm:right-7 sm:size-[54px]"
+      class="fixed bottom-4 right-4 z-[1000] flex size-12 flex-col items-center justify-center gap-0.5 rounded-full border border-brand-light/80 bg-white/90 text-brand-deep shadow-lg backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-brand-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary sm:bottom-7 sm:right-7 sm:size-[54px]"
       @click="scrollToSection('home')"
     >
       <span class="text-xl leading-none">↑</span>

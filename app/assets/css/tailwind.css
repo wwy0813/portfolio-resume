@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-brand-light: #b9d6f2;
+  --color-brand-dark: #061a40;
+  --color-brand-primary: #0353a4;
+  --color-brand-secondary: #006daa;
+  --color-brand-deep: #003559;
+}
+
 /* ① html/body 是根元素，模板里加不了类，用 base 层承接 */
 @layer base {
   html,
