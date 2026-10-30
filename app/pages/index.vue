@@ -175,7 +175,7 @@
         >
           <!-- 第一份工作 -->
           <div
-            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
             data-direction="left"
           >
             <div class="flex items-center justify-between gap-3">
@@ -201,7 +201,7 @@
           </div>
           <!-- 第二份工作 -->
           <div
-            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
+            class="experience-card min-w-0 rounded-2xl border border-[rgba(153,178,205,0.4)] bg-white/80 p-7 opacity-0 scale-[0.88] shadow-[0_8px_24px_rgba(66,94,130,0.05)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_12px_28px_rgba(66,94,130,0.1)] max-[650px]:px-5 max-[650px]:py-[22px]"
             data-direction="right"
           >
             <div class="flex items-center justify-between gap-3">
@@ -234,7 +234,7 @@
       id="skills"
       class="flex min-h-dvh w-full snap-start snap-always flex-col items-center justify-center px-4 py-12 text-center sm:px-6"
     >
-      <div class="mx-auto box-border w-full max-w-[640px]">
+      <div class="mx-auto box-border flex w-full max-w-[640px] flex-col items-center">
         <p class="mb-2 text-[11px] tracking-[4px] text-[#8291a5]">MY SKILLS</p>
 
         <h2
@@ -244,11 +244,11 @@
         </h2>
 
         <div
-          class="skills-grid grid w-full grid-cols-4 items-center justify-items-center gap-5 max-[600px]:gap-3"
+          class="skills-grid mx-auto grid w-full max-w-[560px] grid-cols-4 items-center justify-items-center gap-5 max-[600px]:gap-3"
           :class="{ 'skills-visible': skillsVisible }"
         >
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/HTML5.svg"
@@ -265,7 +265,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/css-3.svg"
@@ -282,7 +282,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/javascript.svg"
@@ -299,7 +299,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/typescript-icon.svg"
@@ -316,7 +316,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/nodejs.svg"
@@ -333,7 +333,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/vue.svg"
@@ -350,7 +350,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/nuxt-icon.svg"
@@ -366,7 +366,7 @@
             </div>
           </div>
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/spring.svg"
@@ -383,7 +383,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/python.svg"
@@ -400,7 +400,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/mysql.svg"
@@ -417,7 +417,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/git-icon.svg"
@@ -434,7 +434,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/github-icon.svg"
@@ -451,7 +451,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/java.svg"
@@ -468,7 +468,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/Visual Studio Code (VS Code).svg"
@@ -485,7 +485,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/IntelliJ IDEA.svg"
@@ -502,7 +502,7 @@
           </div>
 
           <div
-            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 shadow-[0_6px_20px_rgba(66,94,130,0.08)] transition-shadow duration-300 hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2"
+            class="skill-item group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[rgba(153,178,205,0.4)] bg-white/80 p-4 opacity-0 transition-[opacity,transform,box-shadow] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-[0_12px_26px_rgba(66,94,130,0.15)] max-[600px]:p-2 motion-reduce:transform-none motion-reduce:opacity-100"
           >
             <img
               src="/images/Android Studio.svg"
@@ -960,709 +960,3 @@ function closePreview() {
   }
 }
 </script>
-
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-</style>
-
-<style scoped>
-.project-image:hover {
-  transform: scale(1.02);
-}
-
-.preview-image {
-  display: block;
-  max-width: 90vw;
-  max-height: 88vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-
-  border-radius: 10px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-
-  cursor: zoom-out;
-}
-
-.preview-close:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-@media (max-width: 600px) {
-  .image-preview {
-    padding: 16px;
-  }
-
-  .preview-image {
-    max-width: 94vw;
-    max-height: 82vh;
-  }
-
-  .preview-close {
-    top: 12px;
-    right: 12px;
-  }
-}
-/* 项目展示整体 */
-.projects-section {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.projects-label {
-  margin: 0 0 6px;
-  color: #8291a5;
-  font-size: 11px;
-  letter-spacing: 4px;
-}
-
-.projects-title {
-  margin: 0 0 18px;
-  color: #43566e;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-/* 两张卡片等宽、等高、左右对称 */
-.projects-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 24px;
-  width: 100%;
-}
-
-/* 卡片外观 */
-.project-card {
-  min-width: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  text-align: left;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(153, 178, 205, 0.45);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(66, 94, 130, 0.08);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(66, 94, 130, 0.12);
-}
-
-/* 图片尺寸统一，并与卡片边框保持距离 */
-.project-image {
-  display: block;
-  width: calc(100% - 32px);
-  height: 160px;
-  margin: 16px auto 0;
-  box-sizing: border-box;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.project-content {
-  padding: 20px 20px 22px;
-}
-
-.project-type {
-  color: #8291a5;
-  font-size: 11px;
-  letter-spacing: 1px;
-}
-
-.project-content h3 {
-  margin: 7px 0 9px;
-  color: #43566e;
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.project-description {
-  margin: 0;
-  color: #637287;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.project-divider {
-  height: 1px;
-  margin: 14px 0;
-  background: #e1eaf3;
-}
-
-.project-content h4 {
-  margin: 0 0 10px;
-  color: #526b8a;
-  font-size: 13px;
-}
-
-.project-work {
-  display: grid;
-  gap: 7px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.project-work li {
-  position: relative;
-  padding-left: 13px;
-  color: #637287;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.project-work li::before {
-  position: absolute;
-  top: 7px;
-  left: 0;
-  width: 5px;
-  height: 5px;
-  content: '';
-  background: #829bb8;
-  border-radius: 50%;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 15px;
-}
-
-.project-tags span {
-  padding: 5px 9px;
-  color: #526b8a;
-  font-size: 10px;
-  background: #edf3fa;
-  border: 1px solid rgba(153, 178, 205, 0.3);
-  border-radius: 20px;
-}
-
-/* 小屏幕下改为上下排列 */
-@media (max-width: 600px) {
-  .projects-section {
-    max-width: 360px;
-  }
-
-  .projects-list {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .projects-title {
-    font-size: 25px;
-    margin-bottom: 14px;
-  }
-
-  .project-image {
-    height: auto;
-    max-height: 200px;
-  }
-
-  .project-content {
-    padding: 15px 16px 17px;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-section h2 {
-    font-size: 25px;
-  }
-
-  .contact-row {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-info {
-    align-items: flex-start;
-  }
-}
-.experience-section {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.experience-title {
-  margin: 0 0 8px;
-  color: #43566e;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.experience-subtitle {
-  margin: 0 0 32px;
-  color: #8291a5;
-  font-size: 14px;
-}
-
-.experience-list {
-  width: 100%;
-  text-align: left;
-}
-
-.experience-card {
-  box-sizing: border-box;
-  min-width: 0;
-  padding: 28px 26px;
-
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(153, 178, 205, 0.4);
-  border-radius: 16px;
-
-  box-shadow: 0 8px 24px rgba(66, 94, 130, 0.05);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(66, 94, 130, 0.1);
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-@media (max-width: 650px) {
-  .experience-title {
-    font-size: 25px;
-  }
-
-  .experience-subtitle {
-    margin-bottom: 22px;
-  }
-
-  .experience-list {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .experience-card {
-    padding: 22px 20px;
-  }
-
-  .experience-header h3 {
-    font-size: 19px;
-  }
-}
-.back-to-home {
-  position: fixed;
-  right: 28px;
-  bottom: 28px;
-  z-index: 1000;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-
-  width: 54px;
-  height: 54px;
-  border: 1px solid rgba(153, 178, 205, 0.5);
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.9);
-  color: #526b8a;
-  box-shadow: 0 4px 16px rgba(66, 94, 130, 0.15);
-  backdrop-filter: blur(8px);
-
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.back-to-home:hover {
-  background: #526b8a;
-  color: #ffffff;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(66, 94, 130, 0.22);
-}
-.back-arrow {
-  font-size: 22px;
-  line-height: 1;
-}
-.back-text {
-  font-size: 11px;
-  line-height: 1;
-}
-.back-to-home:focus-visible {
-  outline: 2px solid #526b8a;
-  outline-offset: 4px;
-}
-
-.btn-group {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.btn-group button {
-  padding: 9px 20px;
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: rgba(255, 255, 255, 0.65);
-  color: #43566e;
-  border: 1px solid rgba(153, 178, 205, 0.45);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn-group button:hover {
-  background-color: #526b8a;
-  color: #ffffff;
-  border-color: #526b8a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(66, 94, 130, 0.15);
-}
-.btn-group button:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-.btn-group button:focus-visible {
-  outline: 2px solid #526b8a;
-  outline-offset: 3cqmax;
-}
-
-.cursor {
-  animation: blink 0.7s infinite;
-}
-@keyframes answer-in {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@media (max-width: 600px) {
-  .about-section h2 {
-    font-size: 1.5rem;
-  }
-  .about-question {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-  .about-answer {
-    padding: 0 15px 15px;
-  }
-  .about-answer p {
-    font-size: 0.85rem;
-  }
-}
-@media (max-width: 600px) {
-  .back-to-home {
-    right: 16px;
-    bottom: 18px;
-    width: 46px;
-    height: 46px;
-  }
-
-  .back-arrow {
-    font-size: 19px;
-  }
-
-  .back-text {
-    font-size: 10px;
-  }
-}
-
-.skills-section {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.skills-label {
-  margin: 0 0 8px;
-  color: #8291a5;
-  font-size: 11px;
-  letter-spacing: 4px;
-}
-
-.skills-title {
-  margin: 0 0 24px;
-  color: #43566e;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  justify-items: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  min-width: 0;
-  padding: 16px;
-  box-sizing: border-box;
-
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-  cursor: pointer;
-
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(153, 178, 205, 0.4);
-  border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(66, 94, 130, 0.08);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 26px rgba(66, 94, 130, 0.15);
-}
-
-.skill-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.35s ease;
-}
-
-.skill-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  background: rgba(132, 177, 233, 0.72);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skill-overlay span {
-  color: #ffffff;
-  font-size: 23px;
-  font-weight: 600;
-  text-align: center;
-  padding: 0 6px;
-  overflow-wrap: anywhere;
-}
-
-.skill-item:hover .skill-overlay {
-  opacity: 1;
-}
-
-.skill-item:hover .skill-image {
-  transform: scale(1.08);
-}
-
-@media (max-width: 600px) {
-  .skills-section {
-    max-width: 400px;
-  }
-
-  .skills-title {
-    margin-bottom: 20px;
-    font-size: 25px;
-  }
-
-  .skills-grid {
-    gap: 12px;
-  }
-
-  .skill-item {
-    padding: 10px;
-  }
-}
-
-.skills-grid .skill-item {
-  opacity: 0;
-  transform: translateX(-80px);
-
-  transition:
-    opacity 2s ease,
-    transform 2s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.25s ease;
-}
-
-.skills-grid .skill-item:nth-child(4n + 3),
-.skills-grid .skill-item:nth-child(4n + 4) {
-  transform: translateX(80px);
-}
-
-.skills-grid.skills-visible .skill-item {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.skills-grid .skill-item:nth-child(4n + 1) {
-  transition-delay: 0.05s;
-}
-
-.skills-grid .skill-item:nth-child(4n + 2) {
-  transition-delay: 0.12s;
-}
-
-.skills-grid .skill-item:nth-child(4n + 3) {
-  transition-delay: 0.19s;
-}
-
-.skills-grid .skill-item:nth-child(4n + 4) {
-  transition-delay: 0.26s;
-}
-
-.skills-grid.skills-visible .skill-item:hover {
-  transform: translateY(-4px) scale(1.03);
-}
-
-.orbit-ring,
-.ripple {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  border-radius: 50%;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-
-.project-card {
-  position: relative;
-  border: 1px solid rgba(120, 160, 210, 0.22);
-  border-radius: 16px;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(120, 175, 240, 0.65);
-  box-shadow: 0 8px 22px rgba(40, 90, 160, 0.12);
-}
-
-/* 工作经历卡片：初始状态 */
-.experience-card {
-  opacity: 0;
-  transform: translateX(0) scale(0.88);
-  transform-origin: center center;
-  will-change: transform, opacity;
-}
-
-/* 左侧卡片：从左边弹入 */
-.experience-card[data-direction='left'] {
-  transform: translateX(-100px) scale(0.88);
-}
-
-/* 右侧卡片：从右边弹入 */
-.experience-card[data-direction='right'] {
-  transform: translateX(100px) scale(0.88);
-}
-
-/* 进入视野后触发动画 */
-.experience-list.experience-visible .experience-card {
-  animation: jelly-enter 1.15s both;
-}
-
-/* 左右错开一点时间 */
-.experience-list.experience-visible .experience-card[data-direction='right'] {
-  animation-delay: 0.16s;
-}
-
-/* 果冻弹性进入 */
-@keyframes jelly-enter {
-  0% {
-    opacity: 0;
-    transform: translateX(var(--enter-x, 0)) scale(0.88, 0.88);
-  }
-
-  45% {
-    opacity: 1;
-    transform: translateX(0) scale(1.04, 0.96);
-  }
-
-  62% {
-    transform: translateX(0) scale(0.97, 1.03);
-  }
-
-  78% {
-    transform: translateX(0) scale(1.015, 0.99);
-  }
-
-  90% {
-    transform: translateX(0) scale(0.995, 1.005);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1, 1);
-  }
-}
-
-/* 左右方向分别设置初始位移 */
-.experience-card[data-direction='left'] {
-  --enter-x: -100px;
-}
-
-.experience-card[data-direction='right'] {
-  --enter-x: 100px;
-}
-
-/* 动画结束后仍保留原本的悬停效果 */
-.experience-card:hover {
-  transform: translateY(-4px);
-}
-
-.page-container .avatar-orbit .orbit-ring.ring-1,
-.page-container .avatar-orbit .orbit-ring.ring-2,
-.page-container .avatar-orbit .orbit-ring.ring-3,
-.page-container .avatar-orbit .orbit-ring.ring-4 {
-  border-color: rgba(147, 197, 253, 0.45);
-}
-</style>
